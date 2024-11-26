@@ -1,0 +1,11 @@
+---
+title: "Aprendizaje y Conducta Adaptable: Material de Apoyo"
+format: html
+page-layout: full
+---
+
+<center>Esta es la versión preliminar de los simuladores y  presentaciones  elaborados por los miembros del *Laboratorio 25*, para apoyar el aprendizaje de los cursos de *Aprendizaje y Comportamiento Adaptable* que se imparte en la Facultad de Psicología de la UNAM. 
+
+El proyecto de esta página interactiva web fue financiado por el proyecto PAPIME PE309624.
+
+Arturo Bouzas.</center>

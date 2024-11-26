@@ -1,0 +1,16 @@
+---
+title: "Modelo de Difusión de Ratcliff"
+author: 
+    - name: "Christian Badillo."
+order: 1
+date: 2024-11-26
+date-format: full
+---
+
+## Introducción
+
+## Modelo
+
+![Simulación del Modelo de Difusión de Ratcliff (1976).](/DifussionModels/img/DDM.gif){width=100%}
+
+

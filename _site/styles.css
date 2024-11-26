@@ -1,0 +1,5 @@
+/* css styles */
+h1 {
+    display: block;            /* Asegura que sea un bloque para centrar */
+    text-align: center;        /* Centra horizontalmente */
+}

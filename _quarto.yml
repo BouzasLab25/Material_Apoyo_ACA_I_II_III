@@ -1,0 +1,72 @@
+project:
+  type: website
+
+website:
+  title: "Material de Apoyo para el Curso Aprendizaje y Comportamiento Adaptable"
+  sidebar:
+    tools: 
+      - icon: github
+        href: https://github.com/BouzasLab25
+    
+    logo: img_general/Lab25_logo.png
+    
+    contents:
+      - href: index.qmd
+        text: Inicio
+      - href: about.qmd
+        text: Acerca
+
+      - text: "---"
+
+      - section: "Modelos de Difusión"
+        contents: DifussionModels/*.qmd
+
+      - section: "Modelos de Redes Neuronales"
+        contents: ANN/*.qmd
+  
+  page-footer:
+      border: true 
+      center: "Hecho por Christian Badillo con [Quarto](https://quarto.org) y 💜 para el Lab25"
+      left:
+        - text: "Acerca"
+          href: about.qmd
+      right: 'Sitio Web Apoyado por el Proyecto [PAPIME](https://dgapa.unam.mx/index.php/fortalecimiento-a-la-docencia/papime): PE309624'
+
+format:
+  html:
+    link-external-icon: true
+    
+    theme:
+      light: cerulean
+      dark: superhero
+    
+    css: styles.css
+    toc: true
+    toc-title: "Tabla de Contenido"
+    toc-depth: 3
+    code-line-numbers: true
+    code-fold: show
+    code-copy: true
+    code-overflow: scroll
+    code-tools:
+      source: repo
+      toggle: true
+      caption: "Ver código"
+    code-block-border-left: warning
+    code-block-bg: false
+    highlight-style: github
+    code-link: false
+
+    fig-align: center
+
+    plotly-connected: true
+
+execute: 
+  cache: true
+  echo: true
+  output: true
+  freeze: auto
+  keep-ipynb: true
+  kernel: python3
+
+

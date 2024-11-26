@@ -1,0 +1,19 @@
+---
+title: "Acerca"
+about:
+    template: jolla
+    image: img_general/Bouzas_lab.png
+    image-width: "900px"
+    image-shape: rectangle
+    links:
+        - icon: github 
+          text: "Github"
+          href: https://github.com/BouzasLab25
+---
+
+<left> <p1> <i><b> Lab25 </i></b> es un laboratorio, localizado en la Facultad de Psicología de la Universidad Nacional Autónoma de México, cuyo objeto de estudio es el comportamiento adaptable, el aprendizaje y la decisión.
+Nuestra principal meta es contribuir a un mejor entendimiento del comportamiento de agentes humanos y no humanos como una respuesta adaptativa a la estructura estadística de su entorno.
+Actualmente, los temas de investigación que se llevan a cabo incluyen:</p1>
+</br>
+
+<p3> <i>| Aprendizaje por Refuerzo | Modelos Computacionales de Ansiedad | Elección Intertemporal | Elección Multiatributo | Causalidad | Teoría de Juegos | Adaptación a cambios en la condición de refuerzo | Modelamiento Bayesiano | Planeación | Generalización en Modelos de Refuerzo | </i> </p3> </left>

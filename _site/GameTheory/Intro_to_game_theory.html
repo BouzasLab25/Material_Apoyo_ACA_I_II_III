@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Christian Badillo.">
+<meta name="author" content="Hugo Gomez">
 
-<title>Material de Apoyo para el Curso Aprendizaje y Comportamiento Adaptable - Modelo de Difusión de Ratcliff</title>
+<title>Material de Apoyo para el Curso Aprendizaje y Comportamiento Adaptable - Introducción a Teoría de Juegos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -70,6 +90,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -83,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../DifussionModels/DDM_Ratcliff.html">Modelos de Difusión</a></li><li class="breadcrumb-item"><a href="../DifussionModels/DDM_Ratcliff.html">Modelo de Difusión de Ratcliff</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../GameTheory/Intro_to_game_theory.html">Teoría de Juegos</a></li><li class="breadcrumb-item"><a href="../GameTheory/Intro_to_game_theory.html">Introducción a Teoría de Juegos</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -136,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../GameTheory/Intro_to_game_theory.html" class="sidebar-item-text sidebar-link">
+  <a href="../GameTheory/Intro_to_game_theory.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Introducción a Teoría de Juegos</span></a>
   </div>
 </li>
@@ -170,7 +219,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../DifussionModels/DDM_Ratcliff.html" class="sidebar-item-text sidebar-link active">
+  <a href="../DifussionModels/DDM_Ratcliff.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Modelo de Difusión de Ratcliff</span></a>
   </div>
 </li>
@@ -192,17 +241,34 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de Contenido</h2>
    
   <ul>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
-  <li><a href="#modelo" id="toc-modelo" class="nav-link" data-scroll-target="#modelo">Modelo</a></li>
+  <li><a href="#juegos-y-estrategias" id="toc-juegos-y-estrategias" class="nav-link active" data-scroll-target="#juegos-y-estrategias">Juegos y Estrategias</a>
+  <ul class="collapse">
+  <li><a href="#estrategia-pura" id="toc-estrategia-pura" class="nav-link" data-scroll-target="#estrategia-pura">Estrategia Pura</a></li>
+  <li><a href="#estrategia-mixta" id="toc-estrategia-mixta" class="nav-link" data-scroll-target="#estrategia-mixta">Estrategia Mixta</a></li>
+  <li><a href="#estrategia-grim-trigger" id="toc-estrategia-grim-trigger" class="nav-link" data-scroll-target="#estrategia-grim-trigger">Estrategia Grim Trigger</a></li>
+  <li><a href="#estrategia-tit-for-tat" id="toc-estrategia-tit-for-tat" class="nav-link" data-scroll-target="#estrategia-tit-for-tat">Estrategia Tit for Tat</a></li>
+  </ul></li>
+  <li><a href="#soluciones-a-juegos" id="toc-soluciones-a-juegos" class="nav-link" data-scroll-target="#soluciones-a-juegos">Soluciones a Juegos</a>
+  <ul class="collapse">
+  <li><a href="#solución-de-un-juego-por-dominancia" id="toc-solución-de-un-juego-por-dominancia" class="nav-link" data-scroll-target="#solución-de-un-juego-por-dominancia">Solución de un juego por Dominancia</a></li>
+  <li><a href="#solución-de-un-juego-por-maximin-y-minimax" id="toc-solución-de-un-juego-por-maximin-y-minimax" class="nav-link" data-scroll-target="#solución-de-un-juego-por-maximin-y-minimax">Solución de un juego por Maximin y Minimax</a></li>
+  <li><a href="#solución-de-un-juego-por-equilibrio-de-nash" id="toc-solución-de-un-juego-por-equilibrio-de-nash" class="nav-link" data-scroll-target="#solución-de-un-juego-por-equilibrio-de-nash">Solución de un juego por Equilibrio de Nash</a></li>
+  </ul></li>
+  <li><a href="#juegos-con-n-estrategias-y-n-jugadores" id="toc-juegos-con-n-estrategias-y-n-jugadores" class="nav-link" data-scroll-target="#juegos-con-n-estrategias-y-n-jugadores">Juegos con <em>n</em> estrategias y <em>n</em> jugadores</a></li>
+  <li><a href="#teoría-de-juegos-psicológicos" id="toc-teoría-de-juegos-psicológicos" class="nav-link" data-scroll-target="#teoría-de-juegos-psicológicos">Teoría de juegos Psicológicos</a></li>
+  <li><a href="#aprendizaje-en-teoría-de-juegos-reinforcement-learning" id="toc-aprendizaje-en-teoría-de-juegos-reinforcement-learning" class="nav-link" data-scroll-target="#aprendizaje-en-teoría-de-juegos-reinforcement-learning">Aprendizaje en Teoría de Juegos: Reinforcement Learning</a></li>
+  <li><a href="#aprendizaje-en-juegos-functional-experience-weighted-atraction" id="toc-aprendizaje-en-juegos-functional-experience-weighted-atraction" class="nav-link" data-scroll-target="#aprendizaje-en-juegos-functional-experience-weighted-atraction">Aprendizaje en Juegos: Functional Experience Weighted Atraction</a></li>
+  <li><a href="#widget-interactivo" id="toc-widget-interactivo" class="nav-link" data-scroll-target="#widget-interactivo">Widget interactivo</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../DifussionModels/DDM_Ratcliff.html">Modelos de Difusión</a></li><li class="breadcrumb-item"><a href="../DifussionModels/DDM_Ratcliff.html">Modelo de Difusión de Ratcliff</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../GameTheory/Intro_to_game_theory.html">Teoría de Juegos</a></li><li class="breadcrumb-item"><a href="../GameTheory/Intro_to_game_theory.html">Introducción a Teoría de Juegos</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Modelo de Difusión de Ratcliff</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="repo"><i class="bi"></i> Ver código</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Introducción a Teoría de Juegos</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="repo"><i class="bi"></i> Ver código</button></div></div>
 </div>
 
 
@@ -212,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Autor/a</div>
     <div class="quarto-title-meta-contents">
-             <p>Christian Badillo. </p>
+             <p>Hugo Gomez </p>
           </div>
   </div>
     
@@ -231,16 +297,180 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introducción" class="level2">
-<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<p>La teoría de juegos es el estudio de la interacción estratégica, y es el medio para modelar formalmente interacciones entre las personas y prever su comportamiento.</p>
+<p>El marco metodológico que proporciona Teoría de juegos se utiliza para analizar situaciones en las que los resultados de cada jugador dependen de las decisiones que tomaron en conjunto todos los jugadores. Por lo tanto, la elección de una persona depende de la elección de la otra y viseversa.</p>
+<p>La teoría de juegos modela todo tipo de interacciones de la vida diaria, por ejemplo, interacciones entre amigos, equipos deportivos, compañías, o candidatos presidenciales. Casi cualquier interacción puede ser modelada como un juego, y podemos predecir el comportamiento utilizando las herramientas que provee esta teoría.</p>
+<p>Un juego de estrategia es cualquier situación en la que: hay dos o más individuos; las acciones de los individuos determinan conjuntamente los resultados; y los individuos conocen las acciones e incentivos propios y de los demás, y utilizan esta información para anticipar estratégicamente qué acciones elegirán.</p>
+<p>Existen cuatro elementos fundamentales en cualquier juego:</p>
+<ol type="1">
+<li>Los <strong>jugadores</strong> que interactúan: Conjunto finito de tomadores de decisiones, que puede variar de dos a <span class="math inline">\(n\)</span> (<span class="math inline">\(J = {2, ..., n}\)</span>).</li>
+<li>Las <strong>acciones</strong> que estos jugadores pueden elegir: Conjunto discreto o contínuo de acciones de las que los jugadores pueden elegir dependiendo sus consecuencias.</li>
+<li>Las <strong>ganancias</strong> que obtienen los jugadores según las acciones tomadas: Las acciones de los jugadores determinan conjuntamente sus resultados y cada resultado se asocia con una ganancia para cada jugador. Estas pueden representar recompensas extrínsecas (como dinero o bienes), o recompensas intrínsecas (como altruismo o venganza). Así, las recompensas que busca un jugador reflejan sus motivos y preocupaciones.</li>
+<li>La <strong>información</strong> que los jugadores tienen sobre las características del juego y acciones tomadas por sus contrapartes: Para tomar decisiones, los jugadores utilizan información sobre las acciones tomadas por los demás jugadores y los incentivos de esos jugadores. Hay dos clases muy amplias de información: información completa e información incompleta.</li>
+</ol>
+<p>Para acotar las soluciones de un juego se asumen tres supuestos sobre las motivaciones y la capacidad cognitiva de los jugadores:</p>
+<ol type="1">
+<li>Los jugadores son <strong>racionales</strong>: Un jugador es racional cuando actúa conforme a sus preferencias, estas son capturadas en sus elecciones, ya que eligen para maximizar recompensas que cumplan sus preferencias. Es importante aclarar que la racionalidad implica que el objetivo del jugador es maximizar aquello que le importe, por lo que los intereses altruistas como los egoístas son igual de racionales, lo irracional sería no buscar aquello que se prefiere.</li>
+<li>Las reglas del juego y la racionalidad de los jugadores son <strong>conocimiento común</strong>: Suponemos que cada jugador conoce las reglas, cada jugador sabe que los demás conocen las reglas, cada jugador sabe que los demás saben que todos los demás conocen las reglas, y así sucesivamente hasta el infinito. Esta lógica también aplica para la racionalidad de los jugadores. El conocimiento común descarta problemas como que la disponibilidad de información, por ejemplo, evita cosas como que jugador no está seguro de que el otro la haya observado o comprendido.</li>
+<li>Los jugadores tienen <strong>memoria perfecta</strong>: Los jugadores no olvidan la información que pueden haber adquirido durante el transcurso del juego.</li>
+</ol>
+<section id="juegos-y-estrategias" class="level2">
+<h2 class="anchored" data-anchor-id="juegos-y-estrategias">Juegos y Estrategias</h2>
+<section id="estrategia-pura" class="level3">
+<h3 class="anchored" data-anchor-id="estrategia-pura">Estrategia Pura</h3>
+<ul>
+<li><p>Nombre del juego: <em>Dilema del Prisionero</em></p></li>
+<li><p>Tipo de ganancias: <em>Suma general</em></p></li>
+<li><p>Tipo de jugadas: <em>Simultáneo</em></p></li>
+<li><p>Información: <em>Completa</em></p></li>
+</ul>
+<p>Una <strong>estrategia pura</strong> es un plan que no involucra azar, es decir, se sabe con certeza qué acción tomará el jugador en cada punto de decisión.</p>
+<p>El <strong>Dilema del Prisionero</strong> es el juego más famoso de Teoría de Juegos, y fue desarrollado en 1950 con el objetivo de realizar investigaciones para las Fuerzas Armadas de los Estados Unidos. El juego se popularizó por predecir un resultado contraintuitivo, en el dilema del prisionero, cada individuo que persigue racionalmente su interés propio lleva a un resultado perjudicial para todos. Esta paradoja es la razón por la cual este juego ha sido estudiado extensamente y se ha vuelto parte de la cultura popular.</p>
+<p>Los juegos de <strong>suma general</strong> son aquellos en los que las ganancias de los jugadores no tienen que sumar siempre el mismo valor, lo que permite cooperación o competición ya que el beneficio de un jugador no implica necesariamente la pérdida de otro, esta definición cobrará más sentido cuando se compare con los juegos de suma cero.</p>
+<p>Los juegos <strong>simulténaos</strong> implican que los jugadores eligen sus estrategias al mismo tiempo, sin conocer las decisiones de los demás, lo que obliga a cada jugador a tomar decisiones basadas en lo que creen que sus rivales elegirán.</p>
+<p>La <strong>información completa</strong> quiere decir que todos los jugadores conocen las estrategias, los posibles pagos propios y de los demás, y de las acciones previas de todos los jugadores</p>
 </section>
-<section id="modelo" class="level2">
-<h2 class="anchored" data-anchor-id="modelo">Modelo</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../DifussionModels/img/DDM.gif" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Simulación del Modelo de Difusión de Ratcliff (1976).</figcaption>
-</figure>
+<section id="estrategia-mixta" class="level3">
+<h3 class="anchored" data-anchor-id="estrategia-mixta">Estrategia Mixta</h3>
+<ul>
+<li><p>Nombre del juego: <em>Matching Pennies (Versión Penales)</em></p></li>
+<li><p>Tipo de ganancias: <em>Suma cero</em></p></li>
+<li><p>Tipo de jugadas: <em>Simultáneo</em></p></li>
+<li><p>Información: <em>Completa</em></p></li>
+</ul>
+<p>Una <strong>estrategia mixta</strong> es cuando los jugadores juegan sus estrategias puras de manera probabilística. Saber lo que hará el otro jugador con certeza puede ser contraproducente en algunas situaciones (por ejemplo, en un juego de póker o un penal en un partido de fútbol), para esto John von Neumann proporcionó una solución. Esta consistía en permitir que los jugadores aleatorizaran, así, incluso si conocen la probabilidad que el otro le asigna a cada estrategia, aún así no saben cuál será su elección final.</p>
+<p>La probabilidad que un jugador le asigna a su conjunto de estrategias deben sumar 1, no deben ser negativas y se asignan en función de las ganancias de cada jugador. Bajo estas reglas, una estrategia pura puede considerarse como un caso especial de una estrategia mixta, en el que las probabilidades de todas las estrategias son iguales a 0, excepto una, que tiene probabilidad de 1.</p>
+<p>Los juegos de <strong>suma cero</strong> describen situaciones en las que una persona no puede ganar sin perjudicar a otra.</p>
+<p>Esta interacción podría capturarse igualmente con ganancias que siempre sumen a un cierto número que no sea cero. Por ejemplo, si todos los posibles resultados suman 100 puntos para ambos jugadores, aunque las reparticiones de 100 puntos sean diferentes. Por lo anterior, también se le conoce como juego de suma constante, sin embargo utilizaremos el término juego de suma cero. Lo relevante de este tipo de juegos es que es una interacción en la que los intereses de dos jugadores están estrictamente en conflicto. En los juegos de suma general existe la posibilidad de que amboos jugadores puedan ccooperar para maximizar sus ganancias, en estos juegos no puedes ganar algo sin que el otro lo pierda.</p>
+</section>
+<section id="estrategia-grim-trigger" class="level3">
+<h3 class="anchored" data-anchor-id="estrategia-grim-trigger">Estrategia Grim Trigger</h3>
+<ul>
+<li><p>Nombre del juego: <em>Confianza</em></p></li>
+<li><p>Tipo de ganancias: <em>Suma general</em></p></li>
+<li><p>Tipo de jugadas: <em>Secuancial</em></p></li>
+<li><p>Información: <em>Completa</em></p></li>
+</ul>
+<p>La estrategia <strong>grim trigger</strong> es un plan de acción en el que un jugador empieza eligiendo acciones que impliquen cooperar, y mantendrá su cooperación siempre y cuando su rival también esté cooperando. Sin embargo, si su rival elige una sola acción que lo perjudique no volverá a cooperar en lo que resta del juego.</p>
+<p>El <strong>juego de la confianza</strong>, así como el dilema del prisionero, cobra relevancia por representar otro dilema social, es decir, una situación en el que la racionalidad lleva a los participantes del juego a resultados subóptimos. En un ejemplo típico del juego, un jugador es el “inversor” y otro es el “empresario”, el inversor comienza eligiendo si invertir o no en el empresario. Si decide invertir, la cantidad transferida al empresario es multiplica y ahora el empresario debe decidir cuánto devolver al inversor, si es que devuelve algo.</p>
+<p>Los <strong>juegos secuenciales</strong> son aquellos en los que los jugadores toman decisiones de manera ordenada, uno después del otro, cada jugador puede observar las acciones previas antes de tomar su propia decisión, lo que permite estrategias basadas en la historia del juego.</p>
+</section>
+<section id="estrategia-tit-for-tat" class="level3">
+<h3 class="anchored" data-anchor-id="estrategia-tit-for-tat">Estrategia Tit for Tat</h3>
+<ul>
+<li><p>Nombre del juego: <em>Dictador</em></p></li>
+<li><p>Tipo de ganancias: <em>Suma cero</em></p></li>
+<li><p>Tipo de jugadas: <em>Secuancial</em></p></li>
+<li><p>Información: <em>Completa</em></p></li>
+</ul>
+<p>En 1984 Robert Axelrod llevó a cabo un torneo de estrategias, en el torneo le pidió a economistas, psicólogos, matemáticos y sociólogos que reportaran la estrategia que seguirían en un juego repetido del dilema de prisionero, y reportó aquella estrategia que obtuvo mejores resultados.</p>
+<p>La estrategia ganadora fue <strong>tit-for-tat</strong>, dicha estrategia consta en empezar cooperando y copiar lo que sea que el rival haya jugado en la ronda pasada. Esta estrategia es poderosa porque obtiene buenos resultados contra sí misma, debido a que empieza cooperando, no es tan fácil de explotar y es capaz de regresar a cooperar si es que el rival se equivocó.</p>
+<p>En el <strong>juego del dictador</strong> a uno de los jugadores le corresponde ser el “dictador”. El dictador recibe una cantidad fija de recursos (por ejemplo, dinero) y debe decidir cómo dividirlos entre él mismo y el otro jugador. El otro jugador solo puede aceptar la partición que le dieron, si es que el dictador le dió algo.</p>
+</section>
+</section>
+<section id="soluciones-a-juegos" class="level2">
+<h2 class="anchored" data-anchor-id="soluciones-a-juegos">Soluciones a Juegos</h2>
+<section id="solución-de-un-juego-por-dominancia" class="level3">
+<h3 class="anchored" data-anchor-id="solución-de-un-juego-por-dominancia">Solución de un juego por Dominancia</h3>
+<ul>
+<li><p>Nombre del juego: <em>Dilema del Prisionero</em> y <em>Juego del esfuerzo</em></p></li>
+<li><p>Tipo de ganancias: <em>Suma general</em></p></li>
+<li><p>Tipo de jugadas: <em>Simultáneo</em></p></li>
+<li><p>Información: <em>Completa</em></p></li>
+</ul>
+<p>Una <strong>estrategia es estrictamente dominante</strong> cuando todos los resultados de esa estrategia son estrictamente más favoralbles que los resultados de cualquier otra estrategia. El proceso que hacen los jugadores de eliminar estrategias estrictamente dominadas se le llama <strong>eliminación iterativa de estrategias dominadas</strong>, y este proceso te puede llevar a la solución de un juego.</p>
+</section>
+<section id="solución-de-un-juego-por-maximin-y-minimax" class="level3">
+<h3 class="anchored" data-anchor-id="solución-de-un-juego-por-maximin-y-minimax">Solución de un juego por Maximin y Minimax</h3>
+<ul>
+<li><p>Nombre del juego: <em>Candidatos políticos</em></p></li>
+<li><p>Tipo de ganancias: <em>Suma cero</em></p></li>
+<li><p>Tipo de jugadas: <em>Simultáneo</em></p></li>
+<li><p>Información: <em>Completa</em></p></li>
+</ul>
+<p>En muchos juegos los jugadores no tendrán estrategias dominadas, por lo que el método <strong>minimax/maximin</strong> es una manera de llegar a la solución de un juego asumiendo que los jugadores utilizan una regla de dedo, es decir, un atajo cognitivo o “regla de oro”. La regla de dedo es simple, la idea básica es que cada jugador asume que, para cada estrategia que podría jugar, terminará con la menor ganancia posible de esa estrategia. Así que dentro de los peores escenarios el jugador elige el que ofrezca la mayor ganancia, en otras palabras, el jugador actúa para maximizar su ganancia mínima (maximin), mientras que asume que el rival actúa para minimizar su ganancia máxima (minimax).</p>
+<p>Los juegos de suma cero no suelen tener solución por dominancia y esta solución fue creada particularmente para juagos de suma cero, ya que cuando las ganancias de un jugador no son las pérdidas del otro, ya no es razonable asumir que el rival siempre actuará para minimizar ganancias del jugador.</p>
+</section>
+<section id="solución-de-un-juego-por-equilibrio-de-nash" class="level3">
+<h3 class="anchored" data-anchor-id="solución-de-un-juego-por-equilibrio-de-nash">Solución de un juego por Equilibrio de Nash</h3>
+<ul>
+<li><p>Tipo de ganancias: <em>Suma general</em></p></li>
+<li><p>Tipo de jugadas: <em>Simultáneo</em></p></li>
+<li><p>Información: <em>Completa</em></p></li>
+</ul>
+<p>A comparación de las anteriores dos soluciones, este es el enfoque más amplio, ya que funciona para cualquier juego y su solución coincide con las soluciones a las que se llega a dominancia o minimax/maximin, por esta razón es que esta es la solución más usada y reconocida en Teoría de Juegos.</p>
+<p>Determinar la estrategia que será seleccionada por cada jugador de acuerdo al <strong>Equilibrio de Nash</strong> consta de los siguientes pasos: - Primero seleccionamos la ganancia máxima de un jugador para cada estrategia del rival, las estrategias asociadas a esas ganancias serán sus mejores respuestas para cada estrategia del rival. - Después hacemos lo mismo con las ganancias y estrategias del rival. - Ya que conocemos la mejor respuesta de cada participante para cada una de las estrategias del otro, ahora buscamos un resultado donde las ganancias de ambos jugadores fueron seleccionadas, y las estrategias asociadas a esa superposición es el conjunto de estrategias que le permite a ambos jugadores dar su mejor respuesta mutuamente. - Si esta superposición no existe, entonces el Equilibrio de Nash es que ambos jugadores seleccionen de sus estrategias con cierta probabilidad, es decir, es un conjunto de estrategias mixtas.</p>
+<p>Por lo anterior, un Equilibrio de Nash indica que cada jugador prevee perfectamente lo que hará su rival y selecciona la mejor respuesta a esas creencias, y esas creencias siempre son correctas. Debido a que los jugadores tienen creencias correctas y están dando su mejor respuesta, ninguno de los jugadores desea desviarse unilateralmente de su propia estrategia dada la estrategia del otro jugador. Lo que hace el otro jugador está fuera del control del jugador, pero un jugador racional siempre lo anticipará y responderá de la mejor manera.</p>
+</section>
+</section>
+<section id="juegos-con-n-estrategias-y-n-jugadores" class="level2">
+<h2 class="anchored" data-anchor-id="juegos-con-n-estrategias-y-n-jugadores">Juegos con <em>n</em> estrategias y <em>n</em> jugadores</h2>
+<ul>
+<li><p>Nombre del juego: <em>Bienes comunes</em></p></li>
+<li><p>Tipo de ganancias: <em>Suma general</em></p></li>
+<li><p>Tipo de jugadas: <em>Secuencial</em></p></li>
+<li><p>Información: <em>Completa</em></p></li>
+</ul>
+<p>Hasta este punto, hemos considerado únicamente juegos con dos jugadores y un número finito de estrategias (solo dos o tres), estos juegos pueden representarse con matrices de ganancias como ya hemos ilustrado. Sin embargo, hay juegos donde los jugadopres pueden tener un número infinito de estrategias, o un número arbitrariamente grande de jugadores, o ambos.</p>
+<p>Los <strong>juegos con <span class="math inline">\(n\)</span> estrategias y <span class="math inline">\(n\)</span> jugadores</strong> son juegos que no pueden ser representados con matrices, así que son representados con funciones. Además, las soluciones de estos juegos son más complejas, por ejemplo; si las estrategias son continuas, la solución implica usar cálculo para derivar la estrategia que maximiza las ganancias de un jugador; si hay muchos jugadores con incentivos idénticos, podemos buscar un resultado simétrico en el que todos elijan hacer lo mismo.</p>
+<p>El <strong>juego de bienes comunes</strong> consta en que existe un recurso para un grupo de jugadores (por ejemplo, un recurso natural), y cada jugador puede elegir entre cooperar, usando el recurso de manera sostenible, o actuar de manera egoísta y explotar, extrayendo más de lo justo. Este tipo de juego ilustra el dilema de “la tragedia de los comunes”, donde los intereses individuales llevan a un resultado subóptimo para todo un grupo, esto si no existen incentivos que motiven a los jugadores a cooperar.</p>
+</section>
+<section id="teoría-de-juegos-psicológicos" class="level2">
+<h2 class="anchored" data-anchor-id="teoría-de-juegos-psicológicos">Teoría de juegos Psicológicos</h2>
+<ul>
+<li><p>Estrategia del rival: <em>Modelo de Aversión a la Inequidad</em></p></li>
+<li><p>Nombre del juego: <em>Ultimatum</em></p></li>
+<li><p>Tipo de ganancias: <em>Suma cero</em></p></li>
+<li><p>Tipo de jugadas: <em>Secuencial</em></p></li>
+<li><p>Información: <em>Completa</em></p></li>
+</ul>
+<p>En algunas situaciones de Teoría de Juegos las personas se desvían de las soluciones derivadas lógica o matemáticamente. Esto se debe a que Teoría de Juegos asume que a los jugadores solo les importa las ganancias que obtendrán al final del juego. Sin embargo, las elecciones de los jugadores demuestran que, además del resultado final, sus preferencias también incluyen motivaciones psicológicas, como altruismo, reciprocidad, equidad, reputación, emociones como culpa y egoísmo, etc. Por lo anterior, se crean modelos que incluyan dichas motivaciones, y así dar cuenta a las desviaciones conductuales observadas en las personas.</p>
+<p>El juego del <strong>ultimátum</strong> es uno de los juegos más conocidos de teoría de juegos y es un caso especial del juego de negociación. Es aquel en el que solo hay una ronda para que el jugador oferte una partición del presupuesto y otra ronda para que el rival acepte o rechace la partición. La solución de este juego indica que el jugador debe ofrecer la menor cantidad posible del presupuesto, y el rival debe aceptar cualquier oferta que sea mayor a cero, o mantenerse indiferente entre aceptar o rechazar si le ofrecen cero. Sin embargo, la relevancia de este juego radica en que los jugadores se desvían de la solución planteada, y deben pensar en cuánto ofrecer para no ser rechazados y recibir una recompensa.</p>
+<p>El modelo de <strong>Aversión a la Inequidad</strong> de Fher y Schmidt considera que hay personas que les importa sus ganancias y las ganancias de otros jugadores, por esto una recompensa es percibida diferente dependiendo de lo que obtuvo cada quien. El modelo es conocido por explicar conducta justa, competitiva o cooperativa. El modelo solo contiene dos parámetros que ponderan la utilidad total de las ganancias de un jugador, donde (<span class="math inline">\(alpha, \alpha\)</span>) puede ser interpretado estratégicamente como aversión a la desventaja y (<span class="math inline">\(beta, \beta\)</span>) como aversión a la ventaja, o <span class="math inline">\(\alpha\)</span> se suele interpretar como egoísmo y <span class="math inline">\(\beta\)</span> como culpa.</p>
+</section>
+<section id="aprendizaje-en-teoría-de-juegos-reinforcement-learning" class="level2">
+<h2 class="anchored" data-anchor-id="aprendizaje-en-teoría-de-juegos-reinforcement-learning">Aprendizaje en Teoría de Juegos: Reinforcement Learning</h2>
+<ul>
+<li><p>Juego: <em>Negociación</em></p></li>
+<li><p>Agente: <em>Reinforcement Learning</em></p></li>
+</ul>
+<p>El juego de <strong>negociación</strong> representa cualquier situación en la que dos jugadores deben acordar cómo repartirse algo que aporta utilidad a todas las partes involucradas (e.g.&nbsp;un presupuesto total, un pastel para todos, etc.), y si no son capaces de acordar una partición ninguna parte recibirá utilidad. La importancia del juego radica en qué ofertas o contraofertas se deben hacer para no irse con las manos vacias de esa negociación pero sacando el mayor provecho posible.</p>
+<p>En lugar de requerir que los jugadores siempre respondan perfectamente a creencias correctas, el modelo <strong>Reinforcement Learning</strong> (RL) asume que los jugadores le asignan más probabilidad de elección a estrategias que han sido particularmente rentables en el pasado.</p>
+<p>Simplificando, Reinforcement Learning es un modelo de aprendizaje que le asigna la misma probabilid de elección a cada una de sus estrategias puras, pero conforme pasan los ensayos (simulaciones) aprende que algunas estrategias son más rentables que otras y deberían jugarse con más frecuencia. El agente aumenta su probabilidad de jugar una estrategia cada vez que la elige y le va bien. Cada vez que le toca jugar, el agente RL juega cada estrategia pura con una probabilidad relativa al valor que le ha asignado a cada estrategia.</p>
+</section>
+<section id="aprendizaje-en-juegos-functional-experience-weighted-atraction" class="level2">
+<h2 class="anchored" data-anchor-id="aprendizaje-en-juegos-functional-experience-weighted-atraction">Aprendizaje en Juegos: Functional Experience Weighted Atraction</h2>
+<ul>
+<li><p>Juego: <em>Negociación</em></p></li>
+<li><p>Agente: <em>Functional Experience Weighted Atraction</em></p></li>
+</ul>
+<p><strong>Functional Experience Weighted Attraction</strong> (FEWA) es otro modelo de aprendizaje derivado de Experience Weighted Attraction (EWA), sin embargo, esta iteración del modelo contiene parámetros que se autoajustan, y fue creado en respuesta a las críticas por la cantidad de parámetros que hay que estimar en EWA. El modelo inicial EWA, del que está basado FEWA, es un híbrido que combina Aprendizaje por Refuerzo (RL) y Aprendizaje por Creencias (<em>Belief Learning</em> ; BL, por sus siglas en inglés). En otras palabras, FEWA toma en consideración su desempeño total al hacer un conteo de las ganancias que obtuvo por acción (RL), y también toma en cuenta el desempeño promedio del rival al hacer un conteo de las acciones que este eligió (BL).</p>
+</section>
+<section id="widget-interactivo" class="level2">
+<h2 class="anchored" data-anchor-id="widget-interactivo">Widget interactivo</h2>
+<p>Puedes acceder a la versión interactiva de esta introducción a Teoría de Juegos, donde podrás jugar los distintos juegos:</p>
+<ul>
+<li>Google Colab: <a href="https://colab.research.google.com/drive/1Us4FuAiNSayWKYdm1yM0qYGiQYpcG2cv#scrollTo=Bem4iixV2xJa">Introducción a Teoría de Juegos</a></li>
+</ul>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-7bcec23c-ac35-38d9-be51-7f6dc6deba1a" class="csl-entry" role="listitem">
+Camerer, C., &amp; Ho, T.-H. (1999). Experienced-Weighted Attraction Learning in Normal Form Games. <em>Econometrica</em>, <em>67</em>(4), 827-874. <a href="http://www.jstor.org/stable/2999459">http://www.jstor.org/stable/2999459</a>
+</div>
+<div id="ref-carpenter-2022" class="csl-entry" role="listitem">
+Carpenter, J., &amp; Robbett, A. (2022). <em><span>Game Theory and Behavior</span></em>. MIT Press.
+</div>
+<div id="ref-fehr-1999" class="csl-entry" role="listitem">
+Fehr, E., &amp; Schmidt, K. M. (1999). <span>A Theory of Fairness, Competition, and Cooperation</span>. <em>The Quarterly Journal of Economics</em>, <em>114</em>(3), 817-868. <a href="https://doi.org/10.1162/003355399556151">https://doi.org/10.1162/003355399556151</a>
+</div>
+<div id="ref-nash-1950" class="csl-entry" role="listitem">
+Nash, J. F. (1950). <span>Equilibrium points in n -person games</span>. <em>Proceedings of the National Academy of Sciences</em>, <em>36</em>(1), 48-49. <a href="https://doi.org/10.1073/pnas.36.1.48">https://doi.org/10.1073/pnas.36.1.48</a>
+</div>
+<div id="ref-sutton-2018" class="csl-entry" role="listitem">
+Sutton, R. S., &amp; Barto, A. G. (2018). <em><span>Reinforcement Learning, second edition</span></em>. MIT Press.
+</div>
 </div>
 
 

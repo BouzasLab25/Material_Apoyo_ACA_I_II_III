@@ -18,15 +18,18 @@ website:
 
       - text: "---"
 
-      - section: "Modelos de Difusión"
-        contents: DifussionModels/*.qmd
+      - section: "Teoría de Juegos"
+        contents: GameTheory/*.qmd
 
       - section: "Modelos de Redes Neuronales"
         contents: ANN/*.qmd
+
+      - section: "Modelos de Difusión"
+        contents: DifussionModels/*.qmd
   
   page-footer:
       border: true 
-      center: "Hecho por Christian Badillo con [Quarto](https://quarto.org) y 💜 para el Lab25"
+      center: "Sitio Web Creado por Christian Badillo con [Quarto](https://quarto.org) y 💜 para el Lab25"
       left:
         - text: "Acerca"
           href: about.qmd
@@ -34,18 +37,20 @@ website:
 
 format:
   html:
-    link-external-icon: true
+    link-external-icon: false
+    link-external-newwindow: true
     
     theme:
       light: cerulean
       dark: superhero
     
+    lang: es
     css: styles.css
     toc: true
     toc-title: "Tabla de Contenido"
     toc-depth: 3
     code-line-numbers: true
-    code-fold: show
+    code-fold: true
     code-copy: true
     code-overflow: scroll
     code-tools:
@@ -60,6 +65,7 @@ format:
     fig-align: center
 
     plotly-connected: true
+    csl: apa.csl
 
 execute: 
   cache: true
@@ -68,5 +74,3 @@ execute:
   freeze: auto
   keep-ipynb: true
   kernel: python3
-
-

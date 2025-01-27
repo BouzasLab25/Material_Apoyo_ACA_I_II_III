@@ -1,0 +1,8 @@
+---
+title: "Modelo Decision Field Theory de Busemeyer"
+author: 
+    - name: "Christian Badillo."
+order: 1
+date: 2024-11-26
+date-format: full
+---

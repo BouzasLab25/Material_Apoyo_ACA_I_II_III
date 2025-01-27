@@ -1,0 +1,215 @@
+---
+title: "Introducción a Teoría de Juegos"
+author: 
+    - name: "Hugo Gomez"
+order: 1
+date: 2024-11-26
+date-format: full
+bibliography: ref.bib
+nocite: |
+  @*
+---
+
+La teoría de juegos es el estudio de la interacción estratégica, y es el medio para modelar formalmente interacciones entre las personas y prever su comportamiento.
+
+El marco metodológico que proporciona Teoría de juegos se utiliza para analizar situaciones en las que los resultados de cada jugador dependen de las decisiones que tomaron en conjunto todos los jugadores. Por lo tanto, la elección de una persona depende de la elección de la otra y viseversa.  
+
+La teoría de juegos modela todo tipo de interacciones de la vida diaria, por ejemplo, interacciones entre amigos, equipos deportivos, compañías, o candidatos presidenciales. Casi cualquier interacción puede ser modelada como un juego, y podemos predecir el comportamiento utilizando las herramientas que provee esta teoría.
+
+Un juego de estrategia es cualquier situación en la que: hay dos o más individuos; las acciones de los individuos determinan conjuntamente los resultados; y los individuos conocen las acciones e incentivos propios y de los demás, y utilizan esta información para anticipar estratégicamente qué acciones elegirán.
+
+Existen cuatro elementos fundamentales en cualquier juego:
+
+1. Los **jugadores** que interactúan: Conjunto finito de tomadores de decisiones, que puede variar de dos a $n$ ($J = {2, ..., n}$).
+2. Las **acciones** que estos jugadores pueden elegir: Conjunto discreto o contínuo de acciones de las que los jugadores pueden elegir dependiendo sus consecuencias.
+3. Las **ganancias** que obtienen los jugadores según las acciones tomadas: Las acciones de los jugadores determinan conjuntamente sus resultados y cada resultado se asocia con una ganancia para cada jugador. Estas pueden representar recompensas extrínsecas (como dinero o bienes), o recompensas intrínsecas (como altruismo o venganza). Así, las recompensas que busca un jugador reflejan sus motivos y preocupaciones.
+4. La **información** que los jugadores tienen sobre las características del juego y acciones tomadas por sus contrapartes: Para tomar decisiones, los jugadores utilizan información sobre las acciones tomadas por los demás jugadores y los incentivos de esos jugadores. Hay dos clases muy amplias de información: información completa e información incompleta.
+
+Para acotar las soluciones de un juego se asumen tres supuestos sobre las motivaciones y la capacidad cognitiva de los jugadores:
+
+1. Los jugadores son **racionales**: Un jugador es racional cuando actúa conforme a sus preferencias, estas son capturadas en sus elecciones, ya que eligen para maximizar recompensas que cumplan sus preferencias. Es importante aclarar que la racionalidad implica que el objetivo del jugador es maximizar aquello que le importe, por lo que los intereses altruistas como los egoístas son igual de racionales, lo irracional sería no buscar aquello que se prefiere.
+2. Las reglas del juego y la racionalidad de los jugadores son **conocimiento común**: Suponemos que cada jugador conoce las reglas, cada jugador sabe que los demás conocen las reglas, cada jugador sabe que los demás saben que todos los demás conocen las reglas, y así sucesivamente hasta el infinito. Esta lógica también aplica para la racionalidad de los jugadores.  El conocimiento común descarta problemas como que la disponibilidad de información, por ejemplo, evita cosas como que jugador no está seguro de que el otro la haya observado o comprendido.
+3. Los jugadores tienen **memoria perfecta**: Los jugadores no olvidan la información que pueden haber adquirido durante el transcurso del juego.
+
+## Juegos y Estrategias
+
+### Estrategia Pura
+
+* Nombre del juego: *Dilema del Prisionero*
+
+* Tipo de ganancias: *Suma general*
+
+* Tipo de jugadas: *Simultáneo*
+
+* Información: *Completa*
+
+Una **estrategia pura** es un plan que no involucra azar, es decir, se sabe con certeza qué acción tomará el jugador en cada punto de decisión.
+
+El **Dilema del Prisionero** es el juego más famoso de Teoría de Juegos, y fue desarrollado en 1950 con el objetivo de realizar investigaciones para las Fuerzas Armadas de los Estados Unidos. El juego se popularizó por predecir un resultado contraintuitivo, en el dilema del prisionero, cada individuo que persigue racionalmente su interés propio lleva a un resultado perjudicial para todos. Esta paradoja es la razón por la cual este juego ha sido estudiado extensamente y se ha vuelto parte de la cultura popular.
+
+Los juegos de **suma general** son aquellos en los que las ganancias de los jugadores no tienen que sumar siempre el mismo valor, lo que permite cooperación o competición ya que el beneficio de un jugador no implica necesariamente la pérdida de otro, esta definición cobrará más sentido cuando se compare con los juegos de suma cero.
+
+Los juegos **simulténaos** implican que los jugadores eligen sus estrategias al mismo tiempo, sin conocer las decisiones de los demás, lo que obliga a cada jugador a tomar decisiones basadas en lo que creen que sus rivales elegirán.
+
+La **información completa** quiere decir que todos los jugadores conocen las estrategias, los posibles pagos propios y de los demás, y de las acciones previas de todos los jugadores
+
+### Estrategia Mixta
+
+* Nombre del juego: *Matching Pennies (Versión Penales)*
+
+* Tipo de ganancias: *Suma cero*
+
+* Tipo de jugadas: *Simultáneo*
+
+* Información: *Completa*
+
+Una **estrategia mixta** es cuando los jugadores juegan sus estrategias puras de manera probabilística. Saber lo que hará el otro jugador con certeza puede ser contraproducente en algunas situaciones (por ejemplo, en un juego de póker o un penal en un partido de fútbol), para esto John von Neumann proporcionó una solución. Esta consistía en permitir que los jugadores aleatorizaran, así, incluso si conocen la probabilidad que el otro le asigna a cada estrategia, aún así no saben cuál será su elección final.
+
+La probabilidad que un jugador le asigna a su conjunto de estrategias deben sumar 1, no deben ser negativas y se asignan en función de las ganancias de cada jugador. Bajo estas reglas, una estrategia pura puede considerarse como un caso especial de una estrategia mixta, en el que las probabilidades de todas las estrategias son iguales a 0, excepto una, que tiene probabilidad de 1.
+
+Los juegos de **suma cero** describen situaciones en las que una persona no puede ganar sin perjudicar a otra.
+
+Esta interacción podría capturarse igualmente con ganancias que siempre sumen a un cierto número que no sea cero. Por ejemplo, si todos los posibles resultados suman 100 puntos para ambos jugadores, aunque las reparticiones de 100 puntos sean diferentes. Por lo anterior, también se le conoce como juego de suma constante, sin embargo utilizaremos el término juego de suma cero. Lo relevante de este tipo de juegos es que es una interacción en la que los intereses de dos jugadores están estrictamente en conflicto. En los juegos de suma general existe la posibilidad de que amboos jugadores puedan ccooperar para maximizar sus ganancias, en estos juegos no puedes ganar algo sin que el otro lo pierda.
+
+### Estrategia Grim Trigger
+
+* Nombre del juego: *Confianza*
+
+* Tipo de ganancias: *Suma general*
+
+* Tipo de jugadas: *Secuancial*
+
+* Información: *Completa*
+
+La estrategia **grim trigger** es un plan de acción en el que un jugador empieza eligiendo acciones que impliquen cooperar, y mantendrá su cooperación siempre y cuando su rival también esté cooperando. Sin embargo, si su rival elige una sola acción que lo perjudique no volverá a cooperar en lo que resta del juego.
+
+El **juego de la confianza**, así como el dilema del prisionero, cobra relevancia por representar otro dilema social, es decir, una situación en el que la racionalidad lleva a los participantes del juego a resultados subóptimos. En un ejemplo típico del juego, un jugador es el "inversor" y otro es el "empresario", el inversor comienza eligiendo si invertir o no en el empresario. Si decide invertir, la cantidad transferida al empresario es multiplica y ahora el empresario debe decidir cuánto devolver al inversor, si es que devuelve algo.
+
+Los **juegos secuenciales** son aquellos en los que los jugadores toman decisiones de manera ordenada, uno después del otro, cada jugador puede observar las acciones previas antes de tomar su propia decisión, lo que permite estrategias basadas en la historia del juego.
+
+### Estrategia Tit for Tat
+
+* Nombre del juego: *Dictador*
+
+* Tipo de ganancias: *Suma cero*
+
+* Tipo de jugadas: *Secuancial*
+
+* Información: *Completa*
+
+En 1984 Robert Axelrod llevó a cabo un torneo de estrategias, en el torneo le pidió a economistas, psicólogos, matemáticos y sociólogos que reportaran la estrategia que seguirían en un juego repetido del dilema de prisionero, y reportó aquella estrategia que obtuvo mejores resultados.
+
+La estrategia ganadora fue **tit-for-tat**, dicha estrategia consta en empezar cooperando y copiar lo que sea que el rival haya jugado en la ronda pasada. Esta estrategia es poderosa porque obtiene buenos resultados contra sí misma, debido a que empieza cooperando, no es tan fácil de explotar y es capaz de regresar a cooperar si es que el rival se equivocó.
+
+En el **juego del dictador** a uno de los jugadores le corresponde ser el "dictador". El dictador recibe una cantidad fija de recursos (por ejemplo, dinero) y debe decidir cómo dividirlos entre él mismo y el otro jugador. El otro jugador solo puede aceptar la partición que le dieron, si es que el dictador le dió algo.
+
+## Soluciones a Juegos
+
+### Solución de un juego por Dominancia
+
+* Nombre del juego: *Dilema del Prisionero* y *Juego del esfuerzo*
+
+* Tipo de ganancias: *Suma general*
+
+* Tipo de jugadas: *Simultáneo*
+
+* Información: *Completa*
+
+Una **estrategia es estrictamente dominante** cuando todos los resultados de esa estrategia son estrictamente más favoralbles que los resultados de cualquier otra estrategia. El proceso que hacen los jugadores de eliminar estrategias estrictamente dominadas se le llama **eliminación iterativa de estrategias dominadas**, y este proceso te puede llevar a la solución de un juego.
+
+### Solución de un juego por Maximin y Minimax
+
+* Nombre del juego: *Candidatos políticos*
+
+* Tipo de ganancias: *Suma cero*
+
+* Tipo de jugadas: *Simultáneo*
+
+* Información: *Completa*
+
+En muchos juegos los jugadores no tendrán estrategias dominadas, por lo que el método **minimax/maximin** es una manera de llegar a la solución de un juego asumiendo que los jugadores utilizan una regla de dedo, es decir, un atajo cognitivo o “regla de oro”. La regla de dedo es simple, la idea básica es que cada jugador asume que, para cada estrategia que podría jugar, terminará con la menor ganancia posible de esa estrategia. Así que dentro de los peores escenarios el jugador elige el que ofrezca la mayor ganancia, en otras palabras, el jugador actúa para maximizar su ganancia mínima (maximin), mientras que asume que el rival actúa para minimizar su ganancia máxima (minimax).
+
+Los juegos de suma cero no suelen tener solución por dominancia y esta solución fue creada particularmente para juagos de suma cero, ya que cuando las ganancias de un jugador no son las pérdidas del otro, ya no es razonable asumir que el rival siempre actuará para minimizar ganancias del jugador.
+
+### Solución de un juego por Equilibrio de Nash
+
+* Tipo de ganancias: *Suma general*
+
+* Tipo de jugadas: *Simultáneo*
+
+* Información: *Completa*
+
+A comparación de las anteriores dos soluciones, este es el enfoque más amplio, ya que funciona para cualquier juego y su solución coincide con las soluciones a las que se llega a dominancia o minimax/maximin, por esta razón es que esta es la solución más usada y reconocida en Teoría de Juegos.
+
+Determinar la estrategia que será seleccionada por cada jugador de acuerdo al **Equilibrio de Nash** consta de los siguientes pasos:
+- Primero seleccionamos la ganancia máxima de un jugador para cada estrategia del rival, las estrategias asociadas a esas ganancias serán sus mejores respuestas para cada estrategia del rival.
+- Después hacemos lo mismo con las ganancias y estrategias del rival.
+- Ya que conocemos la mejor respuesta de cada participante para cada una de las estrategias del otro, ahora buscamos un resultado donde las ganancias de ambos jugadores fueron seleccionadas, y las estrategias asociadas a esa superposición es el conjunto de estrategias que le permite a ambos jugadores dar su mejor respuesta mutuamente.
+- Si esta superposición no existe, entonces el Equilibrio de Nash es que ambos jugadores seleccionen de sus estrategias con cierta probabilidad, es decir, es un conjunto de estrategias mixtas.
+
+Por lo anterior, un Equilibrio de Nash indica que cada jugador prevee perfectamente lo que hará su rival y selecciona la mejor respuesta a esas creencias, y esas creencias siempre son correctas. Debido a que los jugadores tienen creencias correctas y están dando su mejor respuesta, ninguno de los jugadores desea desviarse unilateralmente de su propia estrategia dada la estrategia del otro jugador. Lo que hace el otro jugador está fuera del control del jugador, pero un jugador racional siempre lo anticipará y responderá de la mejor manera.
+
+## Juegos con *n* estrategias y *n* jugadores
+
+* Nombre del juego: *Bienes comunes*
+
+* Tipo de ganancias: *Suma general*
+
+* Tipo de jugadas: *Secuencial*
+
+* Información: *Completa*
+
+Hasta este punto, hemos considerado únicamente juegos con dos jugadores y un número finito de estrategias (solo dos o tres), estos juegos pueden representarse con matrices de ganancias como ya hemos ilustrado. Sin embargo, hay juegos donde los jugadopres pueden tener un número infinito de estrategias, o un número arbitrariamente grande de jugadores, o ambos.
+
+Los **juegos con $n$ estrategias y $n$ jugadores** son juegos que no pueden ser representados con matrices, así que son representados con funciones. Además, las soluciones de estos juegos son más complejas, por ejemplo; si las estrategias son continuas, la solución implica usar cálculo para derivar la estrategia que maximiza las ganancias de un jugador; si hay muchos jugadores con incentivos idénticos, podemos buscar un resultado simétrico en el que todos elijan hacer lo mismo.
+
+El **juego de bienes comunes** consta en que existe un recurso para un grupo de jugadores (por ejemplo, un recurso natural), y cada jugador puede elegir entre cooperar, usando el recurso de manera sostenible, o actuar de manera egoísta y explotar, extrayendo más de lo justo. Este tipo de juego ilustra el dilema de "la tragedia de los comunes", donde los intereses individuales llevan a un resultado subóptimo para todo un grupo, esto si no existen incentivos que motiven a los jugadores a cooperar.
+
+## Teoría de juegos Psicológicos
+
+* Estrategia del rival: *Modelo de Aversión a la Inequidad*
+
+* Nombre del juego: *Ultimatum*
+
+* Tipo de ganancias: *Suma cero*
+
+* Tipo de jugadas: *Secuencial*
+
+* Información: *Completa*
+
+En algunas situaciones de Teoría de Juegos las personas se desvían de las soluciones derivadas lógica o matemáticamente. Esto se debe a que Teoría de Juegos asume que a los jugadores solo les importa las ganancias que obtendrán al final del juego. Sin embargo, las elecciones de los jugadores demuestran que, además del resultado final, sus preferencias también incluyen motivaciones psicológicas, como altruismo, reciprocidad, equidad, reputación, emociones como culpa y egoísmo, etc. Por lo anterior, se crean modelos que incluyan dichas motivaciones, y así dar cuenta a las desviaciones conductuales observadas en las personas.
+
+El juego del **ultimátum** es uno de los juegos más conocidos de teoría de juegos y es un caso especial del juego de negociación. Es aquel en el que solo hay una ronda para que el jugador oferte una partición del presupuesto y otra ronda para que el rival acepte o rechace la partición. La solución de este juego indica que el jugador debe ofrecer la menor cantidad posible del presupuesto, y el rival debe aceptar cualquier oferta que sea mayor a cero, o mantenerse indiferente entre aceptar o rechazar si le ofrecen cero. Sin embargo, la relevancia de este juego radica en que los jugadores se desvían de la solución planteada, y deben pensar en cuánto ofrecer para no ser rechazados y recibir una recompensa.
+
+El modelo de **Aversión a la Inequidad** de Fher y Schmidt considera que hay personas que les importa sus ganancias y las ganancias de otros jugadores, por esto una recompensa es percibida diferente dependiendo de lo que obtuvo cada quien. El modelo es conocido por explicar conducta justa, competitiva o cooperativa. El modelo solo contiene dos parámetros que ponderan la utilidad total de las ganancias de un jugador, donde ($alpha, \alpha$) puede ser interpretado estratégicamente como aversión a la desventaja y ($beta, \beta$) como aversión a la ventaja, o $\alpha$ se suele interpretar como egoísmo y $\beta$ como culpa.
+
+## Aprendizaje en Teoría de Juegos: Reinforcement Learning
+
+* Juego: *Negociación*
+
+* Agente: *Reinforcement Learning*
+
+El juego de **negociación** representa cualquier situación en la que dos jugadores deben acordar cómo repartirse algo que aporta utilidad a todas las partes involucradas (e.g. un presupuesto total, un pastel para todos, etc.), y si no son capaces de acordar una partición ninguna parte recibirá utilidad. La importancia del juego radica en qué ofertas o contraofertas se deben hacer para no irse con las manos vacias de esa negociación pero sacando el mayor provecho posible.
+
+En lugar de requerir que los jugadores siempre respondan perfectamente a creencias correctas, el modelo **Reinforcement Learning** (RL) asume que los jugadores le asignan más probabilidad de elección a estrategias que han sido particularmente rentables en el pasado.
+
+Simplificando, Reinforcement Learning es un modelo de aprendizaje que le asigna la misma probabilid de elección a cada una de sus estrategias puras, pero conforme pasan los ensayos (simulaciones) aprende que algunas estrategias son más rentables que otras y deberían jugarse con más frecuencia. El agente aumenta su probabilidad de jugar una estrategia cada vez que la elige y le va bien. Cada vez que le toca jugar, el agente RL juega cada estrategia pura con una probabilidad relativa al valor que le ha asignado a cada estrategia.
+
+## Aprendizaje en Juegos: Functional Experience Weighted Atraction
+
+* Juego: *Negociación*
+
+* Agente: *Functional Experience Weighted Atraction*
+
+**Functional Experience Weighted Attraction** (FEWA) es otro modelo de aprendizaje derivado de Experience Weighted Attraction (EWA), sin embargo, esta iteración del modelo contiene parámetros que se autoajustan, y fue creado en respuesta a las críticas por la cantidad de parámetros que hay que estimar en EWA. El modelo inicial EWA, del que está basado FEWA, es un híbrido que combina Aprendizaje por Refuerzo (RL) y Aprendizaje por Creencias (*Belief Learning* ; BL, por sus siglas en inglés). En otras palabras, FEWA toma en consideración su desempeño total al hacer un conteo de las ganancias que obtuvo por acción (RL), y también toma en cuenta el desempeño promedio del rival al hacer un conteo de las acciones que este eligió (BL).
+
+## Widget interactivo
+
+Puedes acceder a la versión interactiva de esta introducción a Teoría de Juegos, donde podrás jugar los distintos juegos:
+
+* Google Colab: [Introducción a Teoría de Juegos](https://colab.research.google.com/drive/1Us4FuAiNSayWKYdm1yM0qYGiQYpcG2cv#scrollTo=Bem4iixV2xJa)
+
+## Referencias
+
+::: {#refs}
+:::

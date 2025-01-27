@@ -15,6 +15,13 @@ website:
         text: Inicio
       - href: about.qmd
         text: Acerca
+      
+      - text: "---"
+      
+      - href: student_guide.qmd
+        text: Guías de Estudio
+      - href: https://christian-badillo.quarto.pub/aprendizaje-comportamiento-adaptable-material-de-apoyo/
+        text: Sitio Web Anterior
 
       - text: "---"
 

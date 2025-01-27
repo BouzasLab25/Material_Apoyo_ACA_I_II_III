@@ -1,5 +1,6 @@
 ---
 title: "Acerca"
+page-layout: full
 about:
     template: jolla
     image: img_general/Bouzas_lab.png

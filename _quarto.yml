@@ -3,6 +3,8 @@ project:
 
 website:
   title: "Material de Apoyo para el Curso Aprendizaje y Comportamiento Adaptable"
+  repo-url: https://github.com/Christian-F-Badillo/Simulaciones_Aprendizaje_y_Conducta_Adaptativa
+  repo-branch: master
   sidebar:
     tools: 
       - icon: github
@@ -29,7 +31,15 @@ website:
         contents: GameTheory/*.qmd
 
       - section: "Modelos de Redes Neuronales"
-        contents: ANN/*.qmd
+        contents: 
+          - href: ANN/IntroANN.qmd
+            text: "Introducción a Redes Neuronales"
+          - href: https://colab.research.google.com/drive/1HXWImo6sjqWgLHpTSArQF4-HzBUfUB6E?usp=sharing
+            text: "Modelo de Memoria Semántica"
+          - href: https://colab.research.google.com/drive/1SxFoFMpcCTFWkGuMAOOJsa9gYIhkFR0O?usp=sharing
+            text: "Modelo de Memoria de Trabajo"
+          - href: https://colab.research.google.com/drive/12Z9t0fRN5nE1KkNErYBMvyRLuHWsODvL?usp=sharing
+            text: "Modelo de Memoria Episódica"
 
       - section: "Modelos de Difusión"
         contents: DifussionModels/*.qmd

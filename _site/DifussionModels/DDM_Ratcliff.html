@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -166,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ANN/introANN.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../ANN/IntroANN.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introducción a Redes Neuronales</span></a>
   </div>
 </li>
@@ -225,6 +254,12 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
   <li><a href="#modelo" id="toc-modelo" class="nav-link" data-scroll-target="#modelo">Modelo</a></li>
+  <li><a href="#aplicaciones." id="toc-aplicaciones." class="nav-link" data-scroll-target="#aplicaciones.">Aplicaciones.</a>
+  <ul class="collapse">
+  <li><a href="#diferencias-individuales" id="toc-diferencias-individuales" class="nav-link" data-scroll-target="#diferencias-individuales">Diferencias Individuales</a></li>
+  <li><a href="#inhibición." id="toc-inhibición." class="nav-link" data-scroll-target="#inhibición.">Inhibición.</a></li>
+  <li><a href="#aplicaciones-clínicas" id="toc-aplicaciones-clínicas" class="nav-link" data-scroll-target="#aplicaciones-clínicas">Aplicaciones Clínicas</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -264,17 +299,54 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introducción" class="level2">
 <h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<p>El modelo de Drift Diffusion (DDM), propuesto por Roger Ratcliff en 1978, es un modelo de toma de decisiones ampliamente utilizado en psicología cognitiva y neurociencias. Este modelo describe cómo los individuos toman decisiones binarias basadas en la acumulación de evidencia en el tiempo. Su fundamento radica en la idea de que la evidencia se acumula de manera estocástica (aleatoria) hasta alcanzar un umbral, momento en el cual se toma una decisión.</p>
 </section>
 <section id="modelo" class="level2">
 <h2 class="anchored" data-anchor-id="modelo">Modelo</h2>
+<p>El DDM asume que cuando una persona enfrenta una decisión de dos opciones (por ejemplo, ¿la palabra mostrada es “real” o “no real”? en una tarea de decisión léxica), su cerebro acumula evidencia en favor de una u otra alternativa hasta que se alcanza un umbral que define la respuesta final. Esta acumulación de evidencia se modela matemáticamente como un proceso de difusión con deriva.</p>
+<p>El modelo de Ratcliff (1978) describe la evolución de la evidencia acumulada en el tiempo mediante la siguiente ecuación:</p>
+<p><span class="math display">\[
+S(t + 1) = S(t) + \delta \cdot h + \frac{\epsilon (0, \sigma^2)}{\sqrt{h}}
+\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../DifussionModels/img/DDM.gif" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Simulación del Modelo de Difusión de Ratcliff (1976).</figcaption>
 </figure>
 </div>
+</section>
+<section id="aplicaciones." class="level2">
+<h2 class="anchored" data-anchor-id="aplicaciones.">Aplicaciones.</h2>
+<p>El Modelo de Difusión con Deriva (DDM) ha sido ampliamente utilizado para comprender y modelar procesos de toma de decisiones en diversas áreas. A continuación, se detallan algunas de sus aplicaciones más significativas:</p>
+<section id="diferencias-individuales" class="level3">
+<h3 class="anchored" data-anchor-id="diferencias-individuales">Diferencias Individuales</h3>
+<p>El DDM ha sido aplicado para estudiar cómo varían los procesos de toma de decisiones entre individuos, considerando factores como la edad, trastornos neurológicos o diferencias cognitivas.</p>
+<section id="ejemplo" class="level4">
+<h4 class="anchored" data-anchor-id="ejemplo">Ejemplo</h4>
+<p>[cita] han utilizado el DDM para analizar cómo el envejecimiento afecta la velocidad de procesamiento y la precisión en tareas de decisión, revelando que las personas mayores pueden requerir más tiempo para acumular evidencia antes de tomar una decisión.</p>
+<p>Fuente: Ratcliff, R., Thapar, A., &amp; McKoon, G. (2004). A diffusion model analysis of the effects of aging on brightness discrimination. Perception &amp; Psychophysics, 66(5), 353–367.</p>
+</section>
+</section>
+<section id="inhibición." class="level3">
+<h3 class="anchored" data-anchor-id="inhibición.">Inhibición.</h3>
+<p>El DDM se ha adaptado para modelar tareas donde los participantes deben responder o inhibir una respuesta ante ciertos estímulos, conocidas como tareas Go/No-Go.</p>
+<section id="ejemplo-1" class="level4">
+<h4 class="anchored" data-anchor-id="ejemplo-1">Ejemplo</h4>
+<p>Gómez et al.&nbsp;(2007) desarrollaron un modelo basado en el DDM para explicar los tiempos de reacción y las tasas de error en tareas Go/No-Go, proporcionando una comprensión más profunda de los mecanismos de control inhibitorio.</p>
+<p>Fuente: Gómez, P., Ratcliff, R., &amp; Perea, M. (2007). A model of the go/no-go task. Journal of Experimental Psychology: General, 136(3), 389–413.</p>
+</section>
+</section>
+<section id="aplicaciones-clínicas" class="level3">
+<h3 class="anchored" data-anchor-id="aplicaciones-clínicas">Aplicaciones Clínicas</h3>
+<p>El DDM ha sido utilizado en contextos clínicos para evaluar y comprender diferencias en la toma de decisiones en poblaciones con trastornos mentales o neurológicos.</p>
+<section id="ejemplo-2" class="level4">
+<h4 class="anchored" data-anchor-id="ejemplo-2">Ejemplo</h4>
+<p>Se ha aplicado el DDM para estudiar patrones de toma de decisiones en individuos con esquizofrenia, ayudando a identificar déficits específicos en la acumulación de evidencia que podrían estar relacionados con síntomas cognitivos de la enfermedad.</p>
+<p>Fuente: Ratcliff, R., &amp; McKoon, G. (2008). The diffusion decision model: theory and data for two-choice decision tasks. Neural Computation, 20(4), 873–922.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

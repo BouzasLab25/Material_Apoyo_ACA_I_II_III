@@ -9,8 +9,51 @@ date-format: full
 
 ## Introducción
 
+El modelo de Drift Diffusion (DDM), propuesto por Roger Ratcliff en 1978, es un modelo de toma de decisiones ampliamente utilizado en psicología cognitiva y neurociencias. Este modelo describe cómo los individuos toman decisiones binarias basadas en la acumulación de evidencia en el tiempo. Su fundamento radica en la idea de que la evidencia se acumula de manera estocástica (aleatoria) hasta alcanzar un umbral, momento en el cual se toma una decisión.
+
 ## Modelo
+
+El DDM asume que cuando una persona enfrenta una decisión de dos opciones (por ejemplo, ¿la palabra mostrada es "real" o "no real"? en una tarea de decisión léxica), su cerebro acumula evidencia en favor de una u otra alternativa hasta que se alcanza un umbral que define la respuesta final. Esta acumulación de evidencia se modela matemáticamente como un proceso de difusión con deriva.
+
+El modelo de Ratcliff (1978) describe la evolución de la evidencia acumulada en el tiempo mediante la siguiente ecuación:
+
+$$
+S(t + 1) = S(t) + \delta \cdot h + \frac{\epsilon (0, \sigma^2)}{\sqrt{h}}
+$$
 
 ![Simulación del Modelo de Difusión de Ratcliff (1976).](/DifussionModels/img/DDM.gif){width=100%}
 
+## Aplicaciones.
 
+El Modelo de Difusión con Deriva (DDM) ha sido ampliamente utilizado para comprender y modelar procesos de toma de decisiones en diversas áreas. A continuación, se detallan algunas de sus aplicaciones más significativas:
+
+
+### Diferencias Individuales
+   
+El DDM ha sido aplicado para estudiar cómo varían los procesos de toma de decisiones entre individuos, considerando factores como la edad, trastornos neurológicos o diferencias cognitivas.
+
+#### Ejemplo
+
+[cita] han utilizado el DDM para analizar cómo el envejecimiento afecta la velocidad de procesamiento y la precisión en tareas de decisión, revelando que las personas mayores pueden requerir más tiempo para acumular evidencia antes de tomar una decisión.
+
+Fuente: Ratcliff, R., Thapar, A., & McKoon, G. (2004). A diffusion model analysis of the effects of aging on brightness discrimination. Perception & Psychophysics, 66(5), 353–367.
+
+### Inhibición.
+
+El DDM se ha adaptado para modelar tareas donde los participantes deben responder o inhibir una respuesta ante ciertos estímulos, conocidas como tareas Go/No-Go.
+
+#### Ejemplo
+
+Gómez et al. (2007) desarrollaron un modelo basado en el DDM para explicar los tiempos de reacción y las tasas de error en tareas Go/No-Go, proporcionando una comprensión más profunda de los mecanismos de control inhibitorio.
+
+Fuente: Gómez, P., Ratcliff, R., & Perea, M. (2007). A model of the go/no-go task. Journal of Experimental Psychology: General, 136(3), 389–413.
+
+### Aplicaciones Clínicas
+
+El DDM ha sido utilizado en contextos clínicos para evaluar y comprender diferencias en la toma de decisiones en poblaciones con trastornos mentales o neurológicos.
+
+#### Ejemplo
+
+Se ha aplicado el DDM para estudiar patrones de toma de decisiones en individuos con esquizofrenia, ayudando a identificar déficits específicos en la acumulación de evidencia que podrían estar relacionados con síntomas cognitivos de la enfermedad.
+
+Fuente: Ratcliff, R., & McKoon, G. (2008). The diffusion decision model: theory and data for two-choice decision tasks. Neural Computation, 20(4), 873–922. 

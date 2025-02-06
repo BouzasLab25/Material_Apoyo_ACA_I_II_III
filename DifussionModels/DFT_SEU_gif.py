@@ -15,7 +15,7 @@ def DFTiteration(delta:float=0, z:float=0, s:float=0, c:float=0, s2:float=1,
 
     while t<=t_max: # Init the simulation and break if reach to the limit of time of the session.
 
-        deltaP = delta*h + np.random.normal(0, np.sqrt(h)*np.sqrt(s2)) # dP, rate of change of the Evidence.
+        deltaP = delta*h + np.random.normal(0, np.sqrt(h * s2)) # dP, rate of change of the Evidence.
 
         update = (1 - (s + c) * h) * P[-1] + deltaP # Update the Evidence
 
@@ -30,7 +30,7 @@ def DFTiteration(delta:float=0, z:float=0, s:float=0, c:float=0, s2:float=1,
     return P
 
 #seeds = [5072001, 1, 2, 4, 5]
-trialddm = DFTiteration(seed = 10072001)# for i in range(1)]
+trialddm = DFTiteration(seed = 10072001, delta=3, s=0.99)# for i in range(1)]
 # xmax = max([len(i) for i in trialddm])
 xmax = len(trialddm)
 
@@ -42,7 +42,7 @@ l, = plt.plot([], [], 'k-')
 plt.ylim(-1.1, 1.1)
 plt.xlim(-20, xmax + int(xmax*0.01))
 
-plt.ylabel(r"Evidencia Acumulada")
+plt.ylabel(r"$P(n)$")
 plt.xlabel("Tiempo (ms)")
 
 plt.hlines(1, xmin=0, xmax=xmax, colors="green", label="Decidir A")
@@ -58,7 +58,7 @@ writer = PillowWriter(fps=30, metadata={"artist":"Christian Badillo", "title":"d
 xlist = []
 ylist = []
 
-with writer.saving(fig, "/home/quicho/Escritorio/Simulaciones_Aprendizaje_y_Conducta_Adaptativa/DifussionModels/img/sequential_seu.gif", 72):
+with writer.saving(fig, "/Users/christianbadillo/Desktop/Simulaciones_Aprendizaje_y_Conducta_Adaptativa/DifussionModels/img/linear_seu_s_low.gif", 72):
     for i in range(len(trialddm)):
             
         xlist.append(i)

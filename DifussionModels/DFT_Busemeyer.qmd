@@ -6,6 +6,9 @@ order: 1
 date: 2024-11-26
 date-format: full
 format: html
+bibilography: /DifussionModels/refDFT.bib
+nocite: |
+  @*
 toc-depth: 4
 ---
 
@@ -84,7 +87,7 @@ import scipy.stats as stats
 import plotly.express as px
 import plotly.io as pio
 import pandas as pd
-pio.renderers.default = "notebook"
+pio.renderers.default = "iframe"
 
 sigmas = [0.1, 0.5, 1, 2, 5]
 x = np.linspace(-5, 5, 1000)
@@ -198,4 +201,41 @@ $$
 
 Indicando que depende de la diferencia entre las valencias y el umbral de decisión. A mayor diferencia entre las valencias menor tiempo se necesita para tomar una decisión y a un umbral de decisión más grande mayor tiempo se necesita. Esto se conoce como un ***trade-off entre la velocidad y la precisión*** o entre **costo y beneficio** en la toma de decisiones, que en este modelo se puede ajustar con el umbral de decisión $\theta$. Si una elección conlleva un costo bajo en equivocarse se puede ajustar el umbral a un valor bajo para tomar decisiones rápidas, mientras que si el costo de equivocarse es alto se puede ajustar el umbral a un valor alto para tomar decisiones más precisas.
 
+El siguiente paso en mostrado en la figura @fig-fig1 es lo que llaman **Random Walk SEU** que es justo lo que se muestra en el gif (véase figura @fig-fig2) donde se acumula evidencia a favor de una opción y se decide cuando se supera un umbral, pero se generaliza el punto de partida, ya que en el gif se parte del cero, pero podemos iniciar en cualquier punto. Si el punto de inicio es cercano al umbral de decisión de alguna de las opciones se dice que hay un **sesgo** en la elección. Este sesgo puede ser provocado por distintos factores como la preferencia por una opción, la cantidad de información que se tiene de una opción, entre otros.
+
+### Memoria
+
+Con las modificaciones creadas hasta ahora el modelo es capaz de representar el proceso de deliberación en la toma de decisiones bastante bien y es una plantilla ampliamente recreada en otros modelos similares. Lo que verdaderamente hace único al modelo de Busemeyer es la inclusión de la memoria en el proceso de toma de decisiones. La memoria se incluye para modelar la inconsistencia en las preferencias y el efecto del tiempo en la elección. Para lograrlo se añade un parámetro llamado **tasa de crecimiento/decaimiento** ($s$) que modela la aparición de efectos de recencia y primacía en la elección.
+
+La recencia se refiere a que la información más reciente tiene mayor peso en la elección, mientras que la primacía se refiere a que la información que se presenta primero tiene mayor peso en la elección. La tasa de crecimiento/decaimiento modela la rapidez con la que se olvida la información, si $0 < s < 1$ se presenta recencia, si $s < 0$ se presenta primacía y si $s = 0$ no hay efecto de memoria. Esto es posible dada la forma matemática en la que se añade la memoria al modelo.
+
+$$
+P(n) = (1 - s) \cdot P(n-1) + (V_A(n) - V_B(n)) + \epsilon(n)
+$$
+
+En los siguientes gifs se muestra el efecto de la memoria en la elección para un $s = 0.99$ (@fig-fig3) y $s = -3$ (@fig-fig4).
+
+![Efecto de Recencia.](/DifussionModels/img/linear_seu_s_low.gif){width=100% #fig-fig3}
+
+![Efecto de Primacia.](/DifussionModels/img/linear_seu_prima.gif){width=100% #fig-fig4}
+
+El efecto es apenas perceptible, pero se nota que principalmente se ve en el tiempo para decidir. En el caso de recencia se toma menos tiempo, mientras que en el caso de primacía se toma más tiempo. 
+
+### Control aversivo y apetitivo: Decision Field Theory.
+
+La última modificación al modelo seda al incluir un parámetro $c$ llamado **gradiente objetivo**, dado que nos permite dar cuenta de que tan apetitiva son las opciones. Para valores de $c > 0$ se dice que las opciones son apetitivas, mientras que para valores de $c < 0$ se dice que las opciones son aversivas. Este parámetro se añade al proceso de acumulación de evidencia de la siguiente forma:
+
+$$
+P(n) = (1 - (s + c)) \cdot P(n-1) + (V_A(n) - V_B(n)) + \epsilon(n)
+$$
+
+Esta última ecuación representa el modelo completo de Busemeyer y Townsend (1993).
+
+## Versión Interactiva.
+
+En el siguiente enlace a Google Colab se puede interactuar con el modelo de Busemeyer y Townsend (1993) para ver el efecto de los parámetros en la elección y el tiempo de decisión.
+
+- [Google Colab: Modelo Decision Field Theory de Busemeyer](https://colab.research.google.com/drive/1JCeTkHNhcOXtT3AHQb6w2eocAJxngUgf?usp=sharing)
+
+## Referencias
 

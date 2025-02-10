@@ -5,6 +5,10 @@ author:
 order: 1
 date: 2024-11-26
 date-format: full
+bibliography: refDDM.bib
+nocite: |
+  @*
+toc-depth: 4
 ---
 
 ## Introducción
@@ -34,19 +38,15 @@ El DDM ha sido aplicado para estudiar cómo varían los procesos de toma de deci
 
 #### Ejemplo
 
-[cita] han utilizado el DDM para analizar cómo el envejecimiento afecta la velocidad de procesamiento y la precisión en tareas de decisión, revelando que las personas mayores pueden requerir más tiempo para acumular evidencia antes de tomar una decisión.
+@ratcliff-2003 han utilizado el DDM para analizar cómo el envejecimiento afecta la velocidad de procesamiento y la precisión en tareas de decisión, revelando que las personas mayores pueden requerir más tiempo para acumular evidencia antes de tomar una decisión
 
-Fuente: Ratcliff, R., Thapar, A., & McKoon, G. (2004). A diffusion model analysis of the effects of aging on brightness discrimination. Perception & Psychophysics, 66(5), 353–367.
-
-### Inhibición.
+### Inhibición
 
 El DDM se ha adaptado para modelar tareas donde los participantes deben responder o inhibir una respuesta ante ciertos estímulos, conocidas como tareas Go/No-Go.
 
 #### Ejemplo
 
-Gómez et al. (2007) desarrollaron un modelo basado en el DDM para explicar los tiempos de reacción y las tasas de error en tareas Go/No-Go, proporcionando una comprensión más profunda de los mecanismos de control inhibitorio.
-
-Fuente: Gómez, P., Ratcliff, R., & Perea, M. (2007). A model of the go/no-go task. Journal of Experimental Psychology: General, 136(3), 389–413.
+@gomez-2007 desarrollaron un modelo basado en el DDM para explicar los tiempos de reacción y las tasas de error en tareas Go/No-Go, proporcionando una comprensión más profunda de los mecanismos de control inhibitorio.
 
 ### Aplicaciones Clínicas
 
@@ -54,6 +54,9 @@ El DDM ha sido utilizado en contextos clínicos para evaluar y comprender difere
 
 #### Ejemplo
 
-Se ha aplicado el DDM para estudiar patrones de toma de decisiones en individuos con esquizofrenia, ayudando a identificar déficits específicos en la acumulación de evidencia que podrían estar relacionados con síntomas cognitivos de la enfermedad.
+@ratcliff-2007 ha aplicado el DDM para estudiar patrones de toma de decisiones en individuos con esquizofrenia, ayudando a identificar déficits específicos en la acumulación de evidencia que podrían estar relacionados con síntomas cognitivos de la enfermedad.
 
-Fuente: Ratcliff, R., & McKoon, G. (2008). The diffusion decision model: theory and data for two-choice decision tasks. Neural Computation, 20(4), 873–922. 
+## Referencias
+::: {#refs}
+:::
+

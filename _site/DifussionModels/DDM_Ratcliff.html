@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -255,11 +275,21 @@ window.Quarto = {
   <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
   <li><a href="#modelo" id="toc-modelo" class="nav-link" data-scroll-target="#modelo">Modelo</a></li>
   <li><a href="#aplicaciones." id="toc-aplicaciones." class="nav-link" data-scroll-target="#aplicaciones.">Aplicaciones.</a>
+  <ul>
+  <li><a href="#diferencias-individuales" id="toc-diferencias-individuales" class="nav-link" data-scroll-target="#diferencias-individuales">Diferencias Individuales</a>
   <ul class="collapse">
-  <li><a href="#diferencias-individuales" id="toc-diferencias-individuales" class="nav-link" data-scroll-target="#diferencias-individuales">Diferencias Individuales</a></li>
-  <li><a href="#inhibición." id="toc-inhibición." class="nav-link" data-scroll-target="#inhibición.">Inhibición.</a></li>
-  <li><a href="#aplicaciones-clínicas" id="toc-aplicaciones-clínicas" class="nav-link" data-scroll-target="#aplicaciones-clínicas">Aplicaciones Clínicas</a></li>
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo</a></li>
   </ul></li>
+  <li><a href="#inhibición." id="toc-inhibición." class="nav-link" data-scroll-target="#inhibición.">Inhibición.</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1">Ejemplo</a></li>
+  </ul></li>
+  <li><a href="#aplicaciones-clínicas" id="toc-aplicaciones-clínicas" class="nav-link" data-scroll-target="#aplicaciones-clínicas">Aplicaciones Clínicas</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-2" id="toc-ejemplo-2" class="nav-link" data-scroll-target="#ejemplo-2">Ejemplo</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias">Referencias</a></li>
   </ul>
 </nav>
     </div>
@@ -323,8 +353,7 @@ S(t + 1) = S(t) + \delta \cdot h + \frac{\epsilon (0, \sigma^2)}{\sqrt{h}}
 <p>El DDM ha sido aplicado para estudiar cómo varían los procesos de toma de decisiones entre individuos, considerando factores como la edad, trastornos neurológicos o diferencias cognitivas.</p>
 <section id="ejemplo" class="level4">
 <h4 class="anchored" data-anchor-id="ejemplo">Ejemplo</h4>
-<p>[cita] han utilizado el DDM para analizar cómo el envejecimiento afecta la velocidad de procesamiento y la precisión en tareas de decisión, revelando que las personas mayores pueden requerir más tiempo para acumular evidencia antes de tomar una decisión.</p>
-<p>Fuente: Ratcliff, R., Thapar, A., &amp; McKoon, G. (2004). A diffusion model analysis of the effects of aging on brightness discrimination. Perception &amp; Psychophysics, 66(5), 353–367.</p>
+<p><span class="citation" data-cites="ratcliff-2003">Ratcliff et&nbsp;al. (<a href="#ref-ratcliff-2003" role="doc-biblioref">2003</a>)</span> han utilizado el DDM para analizar cómo el envejecimiento afecta la velocidad de procesamiento y la precisión en tareas de decisión, revelando que las personas mayores pueden requerir más tiempo para acumular evidencia antes de tomar una decisión</p>
 </section>
 </section>
 <section id="inhibición." class="level3">
@@ -332,8 +361,7 @@ S(t + 1) = S(t) + \delta \cdot h + \frac{\epsilon (0, \sigma^2)}{\sqrt{h}}
 <p>El DDM se ha adaptado para modelar tareas donde los participantes deben responder o inhibir una respuesta ante ciertos estímulos, conocidas como tareas Go/No-Go.</p>
 <section id="ejemplo-1" class="level4">
 <h4 class="anchored" data-anchor-id="ejemplo-1">Ejemplo</h4>
-<p>Gómez et al.&nbsp;(2007) desarrollaron un modelo basado en el DDM para explicar los tiempos de reacción y las tasas de error en tareas Go/No-Go, proporcionando una comprensión más profunda de los mecanismos de control inhibitorio.</p>
-<p>Fuente: Gómez, P., Ratcliff, R., &amp; Perea, M. (2007). A model of the go/no-go task. Journal of Experimental Psychology: General, 136(3), 389–413.</p>
+<p><span class="citation" data-cites="gomez-2007">Gomez et&nbsp;al. (<a href="#ref-gomez-2007" role="doc-biblioref">2007</a>)</span> desarrollaron un modelo basado en el DDM para explicar los tiempos de reacción y las tasas de error en tareas Go/No-Go, proporcionando una comprensión más profunda de los mecanismos de control inhibitorio.</p>
 </section>
 </section>
 <section id="aplicaciones-clínicas" class="level3">
@@ -341,12 +369,25 @@ S(t + 1) = S(t) + \delta \cdot h + \frac{\epsilon (0, \sigma^2)}{\sqrt{h}}
 <p>El DDM ha sido utilizado en contextos clínicos para evaluar y comprender diferencias en la toma de decisiones en poblaciones con trastornos mentales o neurológicos.</p>
 <section id="ejemplo-2" class="level4">
 <h4 class="anchored" data-anchor-id="ejemplo-2">Ejemplo</h4>
-<p>Se ha aplicado el DDM para estudiar patrones de toma de decisiones en individuos con esquizofrenia, ayudando a identificar déficits específicos en la acumulación de evidencia que podrían estar relacionados con síntomas cognitivos de la enfermedad.</p>
-<p>Fuente: Ratcliff, R., &amp; McKoon, G. (2008). The diffusion decision model: theory and data for two-choice decision tasks. Neural Computation, 20(4), 873–922.</p>
-
-
+<p><span class="citation" data-cites="ratcliff-2007">Ratcliff &amp; McKoon (<a href="#ref-ratcliff-2007" role="doc-biblioref">2007</a>)</span> ha aplicado el DDM para estudiar patrones de toma de decisiones en individuos con esquizofrenia, ayudando a identificar déficits específicos en la acumulación de evidencia que podrían estar relacionados con síntomas cognitivos de la enfermedad.</p>
 </section>
 </section>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-gomez-2007" class="csl-entry" role="listitem">
+Gomez, P., Ratcliff, R., &amp; Perea, M. (2007). <span>A model of the go/no-go task.</span> <em>Journal of Experimental Psychology General</em>, <em>136</em>(3), 389-413. <a href="https://doi.org/10.1037/0096-3445.136.3.389">https://doi.org/10.1037/0096-3445.136.3.389</a>
+</div>
+<div id="ref-ratcliff-2007" class="csl-entry" role="listitem">
+Ratcliff, R., &amp; McKoon, G. (2007). <span>The Diffusion Decision Model: Theory and Data for Two-Choice Decision Tasks</span>. <em>Neural Computation</em>, <em>20</em>(4), 873-922. <a href="https://doi.org/10.1162/neco.2008.12-06-420">https://doi.org/10.1162/neco.2008.12-06-420</a>
+</div>
+<div id="ref-ratcliff-2003" class="csl-entry" role="listitem">
+Ratcliff, R., Thapar, A., &amp; Mckoon, G. (2003). <span>A diffusion model analysis of the effects of aging on brightness discrimination</span>. <em>Perception &amp; Psychophysics</em>, <em>65</em>(4), 523-535. <a href="https://doi.org/10.3758/bf03194580">https://doi.org/10.3758/bf03194580</a>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->

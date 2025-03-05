@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Material de Apoyo para el Curso Aprendizaje y Comportamiento Adaptable"
@@ -21,16 +22,16 @@ website:
       - text: "---"
       
       - href: student_guide.qmd
-        text: Guías de Estudio
+        text: "Guías de Estudio"
       - href: https://christian-badillo.quarto.pub/aprendizaje-comportamiento-adaptable-material-de-apoyo/
-        text: Sitio Web Anterior
+        text: "Materiales Anteriores"
 
       - text: "---"
 
       - section: "Teoría de Juegos"
         contents: GameTheory/*.qmd
 
-      - section: "Modelos de Redes Neuronales"
+      - section: "Redes Neuronales"
         contents: 
           - href: ANN/IntroANN.qmd
             text: "Introducción a Redes Neuronales"
@@ -43,6 +44,16 @@ website:
 
       - section: "Modelos de Difusión"
         contents: DifussionModels/*.qmd
+      
+      - section: "Aprendizaje por Refuerzo"
+        contents:
+          - href: https://colab.research.google.com/drive/1G67BzE4XWUSDK5_PwuDXEL6NhgzhLMke?usp=sharing
+            text: "RL en Entornos Volátiles y Estocásticos"
+      
+      - section: "Categorización"
+        contents:
+          - href: https://colab.research.google.com/drive/1Eak3NCf8eTB3FlHXt-RcBEfPTeQokgG8?usp=sharing
+            text: "Modelo Contextual Generalizado"
   
   page-footer:
       border: true 

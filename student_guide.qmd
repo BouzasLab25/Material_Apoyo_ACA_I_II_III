@@ -54,7 +54,7 @@ page-layout: full
         }
         iframe {
             width: 100%;
-            height: 500px;
+            height: 800px;
             border: none;
             margin-top: 20px;
         }
@@ -73,43 +73,5 @@ page-layout: full
     <h2>Guía de Estudio para Aprendizaje y Conducta Adaptativa 2</h2>
     <div class="author-name">Por María Nore Rodríguez González</div>
     <iframe src="guides/notes_aca_2.pdf" title="Visor de PDF"></iframe> 
-    <!-- Tabla -->
-    <h2>Guías por Temas</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Autor</th>
-                <th>Enlace</th>
-                <th>Tema</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Autor 1</td>
-                <td><a href="enlace1.pdf" target="_blank">Texto 1</a></td>
-                <td><span class="tag">Materia A</span></td>
-            </tr>
-            <tr>
-                <td>Autor 2</td>
-                <td><a href="enlace2.pdf" target="_blank">Texto 2</a></td>
-                <td><span class="tag">Materia B</span></td>
-            </tr>
-            <tr>
-                <td>Autor 3</td>
-                <td><a href="enlace3.pdf" target="_blank">Texto 3</a></td>
-                <td><span class="tag">Materia C</span></td>
-            </tr>
-            <tr>
-                <td>Autor 4</td>
-                <td><a href="enlace4.pdf" target="_blank">Texto 4</a></td>
-                <td><span class="tag">Materia A</span></td>
-            </tr>
-            <tr>
-                <td>Autor 5</td>
-                <td><a href="enlace5.pdf" target="_blank">Texto 5</a></td>
-                <td><span class="tag">Materia D</span></td>
-            </tr>
-        </tbody>
-    </table>
 </body>
 </div>

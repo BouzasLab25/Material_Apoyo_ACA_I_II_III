@@ -54,6 +54,11 @@ website:
         contents:
           - href: https://colab.research.google.com/drive/1Eak3NCf8eTB3FlHXt-RcBEfPTeQokgG8?usp=sharing
             text: "Modelo Contextual Generalizado"
+      
+      - section: "Modelos Bayesianos"
+        contents:
+          - href: https://christian-f-badillo-h.shinyapps.io/Regresion-Lineal-Bayesiana/
+            text: "Ley de Igualación Generalizada"
   
   page-footer:
       border: true 

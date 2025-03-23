@@ -88,7 +88,7 @@
         "\n",
         "Donde $\\Phi$ es la función de distribución acumulada de la distribución normal estándar. La cuál se puede visualizar en la siguiente gráfica para distintos valores de $\\sigma$ y $d$.\n"
       ],
-      "id": "4c82da72"
+      "id": "82911b99"
     },
     {
       "cell_type": "code",
@@ -117,7 +117,7 @@
         ")\n",
         "fig.show()"
       ],
-      "id": "c246097b",
+      "id": "1531d702",
       "execution_count": null,
       "outputs": []
     },
@@ -157,7 +157,7 @@
         "\n",
         "En este caso $F$ representa la distribución logística acumulada. En las siguientes gráficas se muestra la probabilidad de elección para distintos valores de $\\theta$, $\\sigma$ y $d$.\n"
       ],
-      "id": "2933597a"
+      "id": "50b0dd82"
     },
     {
       "cell_type": "code",
@@ -216,7 +216,7 @@
         ")\n",
         "figs.show()"
       ],
-      "id": "06fb7dd2",
+      "id": "37ce8f6e",
       "execution_count": null,
       "outputs": []
     },
@@ -270,14 +270,15 @@
         "\n",
         "## Referencias\n"
       ],
-      "id": "fa18fcbf"
+      "id": "4ca89790"
     }
   ],
   "metadata": {
     "kernelspec": {
-      "display_name": "Python 3",
+      "name": "python3",
       "language": "python",
-      "name": "python3"
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\crish\\AppData\\Local\\Programs\\Python\\Python313\\share\\jupyter\\kernels\\python3"
     }
   },
   "nbformat": 4,

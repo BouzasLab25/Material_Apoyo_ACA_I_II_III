@@ -59,6 +59,11 @@ website:
         contents:
           - href: https://christian-f-badillo-h.shinyapps.io/Regresion-Lineal-Bayesiana/
             text: "Ley de Igualación Generalizada"
+      
+      - section: "Curso de Python"
+        contents:
+          - href: https://christian-f-badillo.github.io/Ciencia-de-datos-con-Python-de-estadistica-descriptiva-a-redes-neuronales/
+            text: "Ciencia de Datos con Pyhton"
   
   page-footer:
       border: true 

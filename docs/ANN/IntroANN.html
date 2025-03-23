@@ -333,6 +333,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Curso de Python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://christian-f-badillo.github.io/Ciencia-de-datos-con-Python-de-estadistica-descriptiva-a-redes-neuronales/" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ciencia de Datos con Pyhton</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -376,7 +393,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">22 de marzo de 2025</p>
+      <p class="date">26 de noviembre de 2024</p>
     </div>
   </div>
   
@@ -417,7 +434,7 @@ y &amp;= \sum_{i=1}^{n} x_i \cdot w_i + b
 </ul>
 <p>Cada función de activación tiene sus propias características y se utiliza en diferentes contextos. Por ejemplo, la función sigmoide se utiliza en la capa de salida de una red neuronal para clasificación binaria, la función ReLU se utiliza en las capas ocultas y la función softmax se utiliza en la capa de salida para clasificación multiclase.</p>
 <p>Visualicemos el comportamiento de algunas funciones de activación:</p>
-<div id="3b2c93f2" class="cell" data-execution_count="2">
+<div id="6f2170dc" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -456,13 +473,13 @@ y &amp;= \sum_{i=1}^{n} x_i \cdot w_i + b
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="IntroANN_files/figure-html/cell-2-output-1.png" width="758" height="373" class="figure-img"></p>
+<p><img src="IntroANN_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Hagamos lo que hace una neurona con una función de activación sigmoide.</p>
-<div id="984272cc" class="cell" data-execution_count="3">
+<div id="e11d8307" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Función de activación sigmoide</span></span>
@@ -483,7 +500,7 @@ y &amp;= \sum_{i=1}^{n} x_i \cdot w_i + b
 <span id="cb2-16"><a href="#cb2-16"></a><span class="bu">print</span>(y)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[0.00261715]]</code></pre>
+<pre><code>[[0.07612154]]</code></pre>
 </div>
 </div>
 <p>Estamos realizando la siguiente operación:</p>
@@ -491,7 +508,7 @@ y &amp;= \sum_{i=1}^{n} x_i \cdot w_i + b
 <p>Donde <span class="math inline">\(f(x) = \frac{1}{1 + e^{-x}}\)</span> es la función sigmoide. En este caso, estamos utilizando una neurona con 10 entradas y una salida.</p>
 <p>Lo que busca simular o modelar el comportamiento de una neurona biológica. La neurona biológica recibe señales eléctricas de otras neuronas a través de las dendritas, las procesa en el cuerpo celular y envía una señal eléctrica a través del axón. La señal eléctrica se transmite a través de las sinapsis, que son las conexiones entre las neuronas.</p>
 <p>Ahora veamos cómo se comporta una red neuronal con una capa oculta y una capa de salida. Para esto, vamos a implementar una red neuronal para regresión lineal con pesos y sesgos aleatorios.</p>
-<div id="008de020" class="cell" data-execution_count="4">
+<div id="7c606282" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -522,7 +539,7 @@ y &amp;= \sum_{i=1}^{n} x_i \cdot w_i + b
 </details>
 </div>
 <p>Usemos la red neuronal para predecir un conjunto de datos y con una función de activación identidad.</p>
-<div id="9fe1a419" class="cell" data-execution_count="5">
+<div id="8e24cc49" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Datos de entrada</span></span>
@@ -560,7 +577,7 @@ y &amp;= \sum_{i=1}^{n} x_i \cdot w_i + b
 </div>
 <p>En este caso tenemos una red neuronal con una capa oculta de 10 neuronas y una capa de salida de 1 neurona. La función de activación de la capa oculta es la función identidad y la función de activación de la capa de salida también es la función identidad.</p>
 <p>Los pesos de la red son:</p>
-<div id="c67deaa2" class="cell" data-execution_count="6">
+<div id="375eff70" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="bu">print</span>(<span class="ss">f"Pesos capa oculta: </span><span class="sc">{</span>nn<span class="sc">.</span>weights_input_hidden<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
@@ -583,7 +600,7 @@ Sesgos capa de salida: [1.4985733]
 </div>
 </div>
 <p>Podemos dibujar la red neuronal con los pesos y sesgos asociados a cada conexión.</p>
-<div id="3ad1bea2" class="cell" data-execution_count="7">
+<div id="09dc566c" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">import</span> itertools</span>
@@ -636,7 +653,7 @@ Sesgos capa de salida: [1.4985733]
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="IntroANN_files/figure-html/cell-7-output-1.png" width="979" height="595" class="figure-img"></p>
+<p><img src="IntroANN_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -737,7 +754,7 @@ b &amp;:= b - \alpha \cdot \frac{\partial L(y, \hat{y})}{\partial b}
 <section id="datos-de-entrada" class="level4">
 <h4 class="anchored" data-anchor-id="datos-de-entrada">Datos de Entrada</h4>
 <p>Simulemos datos de entrada y salida para entrenar la red neuronal.</p>
-<div id="abb41843" class="cell" data-execution_count="8">
+<div id="f75bed48" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -800,7 +817,7 @@ b &amp;:= b - \alpha \cdot \frac{\partial L(y, \hat{y})}{\partial b}
 <section id="funciones-auxiliares" class="level4">
 <h4 class="anchored" data-anchor-id="funciones-auxiliares">Funciones auxiliares</h4>
 <p>Vamos a implementar algunas funciones auxiliares para la red neuronal.</p>
-<div id="ea635757" class="cell" data-execution_count="9">
+<div id="9767e82a" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Función de activación sigmoide</span></span>
@@ -851,7 +868,7 @@ b &amp;:= b - \alpha \cdot \frac{\partial L(y, \hat{y})}{\partial b}
 <section id="entrenamiento-de-la-red-neuronal" class="level4">
 <h4 class="anchored" data-anchor-id="entrenamiento-de-la-red-neuronal">Entrenamiento de la Red Neuronal</h4>
 <p>Vamos a entrenar la red neuronal utilizando el algoritmo de retropropagación. Durante el entrenamiento, vamos a calcular la función de pérdida, el gradiente de la función de pérdida con respecto a los pesos y sesgos de la red neuronal y vamos a actualizar los pesos y sesgos utilizando el algoritmo de descenso del gradiente.</p>
-<div id="2dbe96d8" class="cell" data-execution_count="10">
+<div id="946eb878" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">def</span> learning( X, y, weights_input_hidden, bias_input_hidden, weights_hidden_output, bias_hidden_output, learning_rate<span class="op">=</span><span class="fl">0.01</span>):</span>
@@ -915,17 +932,17 @@ Epoch 100: Loss 6.389020521754107
 Epoch 200: Loss 4.640115312713357
 Epoch 300: Loss 3.593583112789311
 Epoch 400: Loss 2.893864014205564
-Epoch 500: Loss 2.404086938164928
+Epoch 500: Loss 2.4040869381649284
 Epoch 600: Loss 2.0676644655384124
 Epoch 700: Loss 1.8628933379595423
 Epoch 800: Loss 1.7838514284596045
 Epoch 900: Loss 1.830931639664496
 Epoch 1000: Loss 2.0075290899566314
-Epoch 1100: Loss 2.323764763823051
-Epoch 1200: Loss 2.810902870761798
-Epoch 1300: Loss 3.5596363395467696
-Epoch 1400: Loss 4.844869738072707
-Epoch 1499: Loss 7.69238941777333</code></pre>
+Epoch 1100: Loss 2.3237647638230507
+Epoch 1200: Loss 2.8109028707617965
+Epoch 1300: Loss 3.559636339546768
+Epoch 1400: Loss 4.8448697380727035
+Epoch 1499: Loss 7.692389417773325</code></pre>
 </div>
 </div>
 </section>
@@ -933,7 +950,7 @@ Epoch 1499: Loss 7.69238941777333</code></pre>
 <section id="predicciones-de-la-red-neuronal" class="level3">
 <h3 class="anchored" data-anchor-id="predicciones-de-la-red-neuronal">Predicciones de la Red Neuronal</h3>
 <p>Una ves que hemos entrenado la red neuronal, podemos hacer predicciones con la red neuronal que es el objetivo de crear un modelo de aprendizaje automático.</p>
-<div id="4cf7181d" class="cell" data-execution_count="11">
+<div id="41812598" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">def</span> predict(X, weights_input_hidden, bias_input_hidden, weights_hidden_output, bias_hidden_output):</span>

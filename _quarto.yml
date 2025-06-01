@@ -59,6 +59,8 @@ website:
         contents:
           - href: https://christian-f-badillo-h.shinyapps.io/Regresion-Lineal-Bayesiana/
             text: "Ley de Igualación Generalizada"
+          - href: https://colab.research.google.com/drive/1iiA9HNeEcyoB84K9MnOKrLZ67sr7PtJh?usp=sharing
+            text: "Introducción a algoritmos Markov Chain Monte Carlo (MCMC)"
       
       - section: "Curso de Python"
         contents:

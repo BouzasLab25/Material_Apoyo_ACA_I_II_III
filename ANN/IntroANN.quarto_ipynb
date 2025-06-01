@@ -58,7 +58,7 @@
         "\n",
         "Visualicemos el comportamiento de algunas funciones de activación:\n"
       ],
-      "id": "76d88745"
+      "id": "0b9cd5c3"
     },
     {
       "cell_type": "code",
@@ -97,7 +97,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "ea3396e3",
+      "id": "8aba593c",
       "execution_count": null,
       "outputs": []
     },
@@ -107,7 +107,7 @@
       "source": [
         "Hagamos lo que hace una neurona con una función de activación sigmoide.\n"
       ],
-      "id": "d29dea10"
+      "id": "4f2d239b"
     },
     {
       "cell_type": "code",
@@ -130,7 +130,7 @@
         "\n",
         "print(y)"
       ],
-      "id": "f97b4d25",
+      "id": "abd2c6a4",
       "execution_count": null,
       "outputs": []
     },
@@ -148,7 +148,7 @@
         "\n",
         "Ahora veamos cómo se comporta una red neuronal con una capa oculta y una capa de salida. Para esto, vamos a implementar una red neuronal para regresión lineal con pesos y sesgos aleatorios.\n"
       ],
-      "id": "f2a57a4c"
+      "id": "e93d0fe3"
     },
     {
       "cell_type": "code",
@@ -180,7 +180,7 @@
         "        \n",
         "        return output"
       ],
-      "id": "cd375fe4",
+      "id": "d5ed922d",
       "execution_count": null,
       "outputs": []
     },
@@ -190,7 +190,7 @@
       "source": [
         "Usemos la red neuronal para predecir un conjunto de datos y con una función de activación identidad.\n"
       ],
-      "id": "49433a5f"
+      "id": "961a8e48"
     },
     {
       "cell_type": "code",
@@ -216,7 +216,7 @@
         "\n",
         "print(y_pred)"
       ],
-      "id": "a4eac7d5",
+      "id": "ee24ca48",
       "execution_count": null,
       "outputs": []
     },
@@ -228,7 +228,7 @@
         "\n",
         "Los pesos de la red son:\n"
       ],
-      "id": "b9094f54"
+      "id": "e76cc857"
     },
     {
       "cell_type": "code",
@@ -239,7 +239,7 @@
         "print(f\"Pesos capa de salida: {nn.weights_hidden_output.T}\\n\")\n",
         "print(f\"Sesgos capa de salida: {nn.bias_hidden_output}\\n\")"
       ],
-      "id": "4c267621",
+      "id": "4289b03a",
       "execution_count": null,
       "outputs": []
     },
@@ -249,7 +249,7 @@
       "source": [
         "Podemos dibujar la red neuronal con los pesos y sesgos asociados a cada conexión.\n"
       ],
-      "id": "c20bab7a"
+      "id": "671f4925"
     },
     {
       "cell_type": "code",
@@ -302,7 +302,7 @@
         "\n",
         "plt.show()"
       ],
-      "id": "c23eeb5c",
+      "id": "40a8d3d3",
       "execution_count": null,
       "outputs": []
     },
@@ -429,7 +429,7 @@
         "\n",
         "Simulemos datos de entrada y salida para entrenar la red neuronal. \n"
       ],
-      "id": "afee1bee"
+      "id": "83bcb411"
     },
     {
       "cell_type": "code",
@@ -447,7 +447,7 @@
         "df = pd.DataFrame(np.concatenate([X, y], axis=1), columns=[\"X\", \"y\"])\n",
         "df.head()"
       ],
-      "id": "ed96dab4",
+      "id": "6f8151b5",
       "execution_count": null,
       "outputs": []
     },
@@ -459,7 +459,7 @@
         "\n",
         "Vamos a implementar algunas funciones auxiliares para la red neuronal.\n"
       ],
-      "id": "89b2a157"
+      "id": "fbd68636"
     },
     {
       "cell_type": "code",
@@ -509,7 +509,7 @@
         "    \n",
         "    return weights_input_hidden, bias_input_hidden, weights_hidden_output, bias_hidden_output"
       ],
-      "id": "1e560d26",
+      "id": "e9fa8e13",
       "execution_count": null,
       "outputs": []
     },
@@ -521,7 +521,7 @@
         "\n",
         "Vamos a entrenar la red neuronal utilizando el algoritmo de retropropagación. Durante el entrenamiento, vamos a calcular la función de pérdida, el gradiente de la función de pérdida con respecto a los pesos y sesgos de la red neuronal y vamos a actualizar los pesos y sesgos utilizando el algoritmo de descenso del gradiente.\n"
       ],
-      "id": "7d4e66c3"
+      "id": "ea9b0c2d"
     },
     {
       "cell_type": "code",
@@ -582,7 +582,7 @@
         "    elif epoch == epochs - 1:\n",
         "        print(f\"Epoch {epoch}: Loss {loss}\")"
       ],
-      "id": "ba151b73",
+      "id": "c5a41b98",
       "execution_count": null,
       "outputs": []
     },
@@ -594,7 +594,7 @@
         "\n",
         "Una ves que hemos entrenado la red neuronal, podemos hacer predicciones con la red neuronal que es el objetivo de crear un modelo de aprendizaje automático."
       ],
-      "id": "e09017e9"
+      "id": "42607d3e"
     },
     {
       "cell_type": "code",
@@ -614,7 +614,7 @@
         "\n",
         "df_normalized.head()"
       ],
-      "id": "65406008",
+      "id": "129bc110",
       "execution_count": null,
       "outputs": []
     },
@@ -636,7 +636,7 @@
         "\n",
         "Cada tipo de red neuronal tiene sus propias características y se utiliza en diferentes contextos. Algunas redes son más sencillos de entrenar y otras son más complejas. Por ejemplo, las redes neuronales convolucionales son más sencillas de entrenar que las redes neuronales recurrentes, ya que las redes convolucionales no tienen dependencias temporales."
       ],
-      "id": "75fca42d"
+      "id": "72545dcc"
     }
   ],
   "metadata": {

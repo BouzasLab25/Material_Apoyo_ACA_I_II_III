@@ -5,14 +5,13 @@ author:
 order: 1
 date: 2024-11-26
 date-format: full
-format: html
-bibilography: /DifussionModels/refDFT.bib
+bibliography: refDFT.bib
 nocite: |
   @*
 toc-depth: 4
 ---
 
-El modelo ***Decision Field Theory*** de Busemeyer (1992, 1993) surge como a una alternativa a los modelos de decisión clásicos en el estudio de toma de decisión bajo riesgo e incertidumbre. Su objetivo es modelar el proceso de **deliberación** que lleva a la toma de decisiones, en lugar de simplemente describir el resultado de la decisión. Para ello se busca modelar dos fenómenos ampliamente documentados en la literatura de toma de decisiones.
+El modelo ***Decision Field Theory*** de @busemeyer-1993 y @busemeyer-1992 surge como a una alternativa a los modelos de decisión clásicos en el estudio de toma de decisión bajo riesgo e incertidumbre. Su objetivo es modelar el proceso de **deliberación** que lleva a la toma de decisiones, en lugar de simplemente describir el resultado de la decisión. Para ello se busca modelar dos fenómenos ampliamente documentados en la literatura de toma de decisiones.
 
 1. Inconsistencia en las preferencias. 
 2. El tiempo disponible para decidir afecta la elección.
@@ -21,7 +20,7 @@ El primer punto se refiere a que la transitividad entre las preferencias no siem
 
 ## Construcción del Modelo
 
-Para constuir el modelo Busemyer en su artículo *Decision field theory: A dynamic-cognitive approach to decision making in an uncertain environment* (1993) da una serie de bloques que se añaden para crear el modelo basandose en modelos previos de toma de decisiones. En esta sección se resumira la construcción del modelo.
+Para constuir el modelo Busemyer en @busemeyer-1993 da una serie de bloques que se añaden para crear el modelo basandose en modelos previos de toma de decisiones. En esta sección se resumira la construcción del modelo.
 
 ![Construcción del modelo Decision Field Theory. Obtenida de Busemeyer y Townsend (1993).](/DifussionModels/img/model_build_busemeyer.png){width=100% #fig-fig1}
 
@@ -238,4 +237,5 @@ En el siguiente enlace a Google Colab se puede interactuar con el modelo de Buse
 - [Google Colab: Modelo Decision Field Theory de Busemeyer](https://colab.research.google.com/drive/1JCeTkHNhcOXtT3AHQb6w2eocAJxngUgf?usp=sharing)
 
 ## Referencias
-
+::: {#refs}
+:::

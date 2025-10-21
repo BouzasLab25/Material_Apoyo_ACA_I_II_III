@@ -56,6 +56,10 @@ El DDM ha sido utilizado en contextos clínicos para evaluar y comprender difere
 
 @ratcliff-2007 ha aplicado el DDM para estudiar patrones de toma de decisiones en individuos con esquizofrenia, ayudando a identificar déficits específicos en la acumulación de evidencia que podrían estar relacionados con síntomas cognitivos de la enfermedad.
 
+## Versión Interactiva
+
+Puedes explorar una versión interactiva del Modelo de Difusión de Ratcliff en el siguiente enlace: [Modelo de Difusión Interactivo](https://colab.research.google.com/drive/1P_o9OUY38rpgr05Dt1yiEeUX7rXgxic2?usp=sharing)
+
 ## Referencias
 ::: {#refs}
 :::

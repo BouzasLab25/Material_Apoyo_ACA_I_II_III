@@ -11,15 +11,13 @@
         "order: 1\n",
         "date: 2024-11-26\n",
         "date-format: full\n",
-        "format: html\n",
-        "bibilography: /DifussionModels/refDFT.bib\n",
+        "bibliography: refDFT.bib\n",
         "nocite: |\n",
         "  @*\n",
         "toc-depth: 4\n",
         "---\n",
         "\n",
-        "\n",
-        "El modelo ***Decision Field Theory*** de Busemeyer (1992, 1993) surge como a una alternativa a los modelos de decisión clásicos en el estudio de toma de decisión bajo riesgo e incertidumbre. Su objetivo es modelar el proceso de **deliberación** que lleva a la toma de decisiones, en lugar de simplemente describir el resultado de la decisión. Para ello se busca modelar dos fenómenos ampliamente documentados en la literatura de toma de decisiones.\n",
+        "El modelo ***Decision Field Theory*** de @busemeyer-1993 y @busemeyer-1992 surge como a una alternativa a los modelos de decisión clásicos en el estudio de toma de decisión bajo riesgo e incertidumbre. Su objetivo es modelar el proceso de **deliberación** que lleva a la toma de decisiones, en lugar de simplemente describir el resultado de la decisión. Para ello se busca modelar dos fenómenos ampliamente documentados en la literatura de toma de decisiones.\n",
         "\n",
         "1. Inconsistencia en las preferencias. \n",
         "2. El tiempo disponible para decidir afecta la elección.\n",
@@ -28,7 +26,7 @@
         "\n",
         "## Construcción del Modelo\n",
         "\n",
-        "Para constuir el modelo Busemyer en su artículo *Decision field theory: A dynamic-cognitive approach to decision making in an uncertain environment* (1993) da una serie de bloques que se añaden para crear el modelo basandose en modelos previos de toma de decisiones. En esta sección se resumira la construcción del modelo.\n",
+        "Para constuir el modelo Busemyer en @busemeyer-1993 da una serie de bloques que se añaden para crear el modelo basandose en modelos previos de toma de decisiones. En esta sección se resumira la construcción del modelo.\n",
         "\n",
         "![Construcción del modelo Decision Field Theory. Obtenida de Busemeyer y Townsend (1993).](/DifussionModels/img/model_build_busemeyer.png){width=100% #fig-fig1}\n",
         "\n",
@@ -86,9 +84,9 @@
         "Pr(A, B) = Pr(\\epsilon > -d) = \\Phi\\left(\\frac{d}{\\sigma}\\right)\n",
         "$$\n",
         "\n",
-        "Donde $\\Phi$ es la función de distribución acumulada de la distribución normal estándar. La cuál se puede visualizar en la siguiente gráfica para distintos valores de $\\sigma$ y $d$.\n"
+        "Donde $\\Phi$ es la función de distribución acumulada de la distribución normal estándar. La cuál se puede visualizar en la siguiente gráfica para distintos valores de $\\sigma$ y $d$."
       ],
-      "id": "d4cc641e"
+      "id": "4c3e2415"
     },
     {
       "cell_type": "code",
@@ -117,7 +115,7 @@
         ")\n",
         "fig.show()"
       ],
-      "id": "45be13d1",
+      "id": "09c46857",
       "execution_count": null,
       "outputs": []
     },
@@ -155,9 +153,9 @@
         "Pr(A, B) = Pr(P(n) > \\theta) = F \\left( 2 \\cdot \\frac{d}{\\sigma} \\cdot \\frac{\\theta}{\\sigma} \\right)\n",
         "$$\n",
         "\n",
-        "En este caso $F$ representa la distribución logística acumulada. En las siguientes gráficas se muestra la probabilidad de elección para distintos valores de $\\theta$, $\\sigma$ y $d$.\n"
+        "En este caso $F$ representa la distribución logística acumulada. En las siguientes gráficas se muestra la probabilidad de elección para distintos valores de $\\theta$, $\\sigma$ y $d$."
       ],
-      "id": "3c841b9f"
+      "id": "ecbc9cb3"
     },
     {
       "cell_type": "code",
@@ -216,7 +214,7 @@
         ")\n",
         "figs.show()"
       ],
-      "id": "61ad2335",
+      "id": "f4bbaed9",
       "execution_count": null,
       "outputs": []
     },
@@ -268,9 +266,11 @@
         "\n",
         "- [Google Colab: Modelo Decision Field Theory de Busemeyer](https://colab.research.google.com/drive/1JCeTkHNhcOXtT3AHQb6w2eocAJxngUgf?usp=sharing)\n",
         "\n",
-        "## Referencias\n"
+        "## Referencias\n",
+        "::: {#refs}\n",
+        ":::"
       ],
-      "id": "22a65fab"
+      "id": "51f01a05"
     }
   ],
   "metadata": {
@@ -278,7 +278,7 @@
       "name": "python3",
       "language": "python",
       "display_name": "Python 3 (ipykernel)",
-      "path": "C:\\Users\\crish\\AppData\\Local\\Programs\\Python\\Python313\\share\\jupyter\\kernels\\python3"
+      "path": "/home/quicho/Escritorio/Material_Apoyo_ACA_I_II_III/.venv/share/jupyter/kernels/python3"
     }
   },
   "nbformat": 4,

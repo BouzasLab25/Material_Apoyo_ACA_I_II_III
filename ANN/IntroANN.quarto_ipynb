@@ -13,7 +13,6 @@
         "order: 1\n",
         "---\n",
         "\n",
-        "\n",
         "Las redes neuronales artificiales son un modelo computacional inspirado en el cerebro humano. Están compuestas por nodos llamados neuronas que están conectados entre sí. Cada conexión entre neuronas tiene un peso asociado que se ajusta durante el entrenamiento del modelo. Estos pesos son los parámetros que se ajustan para que el modelo pueda realizar predicciones, es decir, son la memoria del modelo y representan la importancia de cada conexión.\n",
         "\n",
         "Las redes neuronales artificiales se dividen en capas, cada capa está compuesta por un conjunto de neuronas. La primera capa se llama **capa de entrada**, la última capa se llama **capa de salida** y las capas intermedias se llaman **capas ocultas**. La capa de entrada recibe los datos de entrada, la capa de salida produce la predicción y las capas ocultas procesan la información.\n",
@@ -56,9 +55,9 @@
         "\n",
         "Cada función de activación tiene sus propias características y se utiliza en diferentes contextos. Por ejemplo, la función sigmoide se utiliza en la capa de salida de una red neuronal para clasificación binaria, la función ReLU se utiliza en las capas ocultas y la función softmax se utiliza en la capa de salida para clasificación multiclase.\n",
         "\n",
-        "Visualicemos el comportamiento de algunas funciones de activación:\n"
+        "Visualicemos el comportamiento de algunas funciones de activación:"
       ],
-      "id": "0b9cd5c3"
+      "id": "6a511e5d"
     },
     {
       "cell_type": "code",
@@ -97,7 +96,7 @@
         "plt.tight_layout()\n",
         "plt.show()"
       ],
-      "id": "8aba593c",
+      "id": "df8091b2",
       "execution_count": null,
       "outputs": []
     },
@@ -105,9 +104,9 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "Hagamos lo que hace una neurona con una función de activación sigmoide.\n"
+        "Hagamos lo que hace una neurona con una función de activación sigmoide."
       ],
-      "id": "4f2d239b"
+      "id": "de745fac"
     },
     {
       "cell_type": "code",
@@ -130,7 +129,7 @@
         "\n",
         "print(y)"
       ],
-      "id": "abd2c6a4",
+      "id": "628cb163",
       "execution_count": null,
       "outputs": []
     },
@@ -146,9 +145,9 @@
         "\n",
         "Lo que busca simular o modelar el comportamiento de una neurona biológica. La neurona biológica recibe señales eléctricas de otras neuronas a través de las dendritas, las procesa en el cuerpo celular y envía una señal eléctrica a través del axón. La señal eléctrica se transmite a través de las sinapsis, que son las conexiones entre las neuronas.\n",
         "\n",
-        "Ahora veamos cómo se comporta una red neuronal con una capa oculta y una capa de salida. Para esto, vamos a implementar una red neuronal para regresión lineal con pesos y sesgos aleatorios.\n"
+        "Ahora veamos cómo se comporta una red neuronal con una capa oculta y una capa de salida. Para esto, vamos a implementar una red neuronal para regresión lineal con pesos y sesgos aleatorios."
       ],
-      "id": "e93d0fe3"
+      "id": "98de4835"
     },
     {
       "cell_type": "code",
@@ -180,7 +179,7 @@
         "        \n",
         "        return output"
       ],
-      "id": "d5ed922d",
+      "id": "36408602",
       "execution_count": null,
       "outputs": []
     },
@@ -188,9 +187,9 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "Usemos la red neuronal para predecir un conjunto de datos y con una función de activación identidad.\n"
+        "Usemos la red neuronal para predecir un conjunto de datos y con una función de activación identidad."
       ],
-      "id": "961a8e48"
+      "id": "2b82b2e5"
     },
     {
       "cell_type": "code",
@@ -216,7 +215,7 @@
         "\n",
         "print(y_pred)"
       ],
-      "id": "ee24ca48",
+      "id": "2580d089",
       "execution_count": null,
       "outputs": []
     },
@@ -226,9 +225,9 @@
       "source": [
         "En este caso tenemos una red neuronal con una capa oculta de 10 neuronas y una capa de salida de 1 neurona. La función de activación de la capa oculta es la función identidad y la función de activación de la capa de salida también es la función identidad.\n",
         "\n",
-        "Los pesos de la red son:\n"
+        "Los pesos de la red son:"
       ],
-      "id": "e76cc857"
+      "id": "92a22e73"
     },
     {
       "cell_type": "code",
@@ -239,7 +238,7 @@
         "print(f\"Pesos capa de salida: {nn.weights_hidden_output.T}\\n\")\n",
         "print(f\"Sesgos capa de salida: {nn.bias_hidden_output}\\n\")"
       ],
-      "id": "4289b03a",
+      "id": "69fb5a57",
       "execution_count": null,
       "outputs": []
     },
@@ -247,9 +246,9 @@
       "cell_type": "markdown",
       "metadata": {},
       "source": [
-        "Podemos dibujar la red neuronal con los pesos y sesgos asociados a cada conexión.\n"
+        "Podemos dibujar la red neuronal con los pesos y sesgos asociados a cada conexión."
       ],
-      "id": "671f4925"
+      "id": "cc19e4d8"
     },
     {
       "cell_type": "code",
@@ -302,7 +301,7 @@
         "\n",
         "plt.show()"
       ],
-      "id": "40a8d3d3",
+      "id": "e93cfd52",
       "execution_count": null,
       "outputs": []
     },
@@ -427,9 +426,9 @@
         "\n",
         "#### Datos de Entrada\n",
         "\n",
-        "Simulemos datos de entrada y salida para entrenar la red neuronal. \n"
+        "Simulemos datos de entrada y salida para entrenar la red neuronal. "
       ],
-      "id": "83bcb411"
+      "id": "14e6cf3a"
     },
     {
       "cell_type": "code",
@@ -447,7 +446,7 @@
         "df = pd.DataFrame(np.concatenate([X, y], axis=1), columns=[\"X\", \"y\"])\n",
         "df.head()"
       ],
-      "id": "6f8151b5",
+      "id": "0123cc6a",
       "execution_count": null,
       "outputs": []
     },
@@ -457,9 +456,9 @@
       "source": [
         "#### Funciones auxiliares\n",
         "\n",
-        "Vamos a implementar algunas funciones auxiliares para la red neuronal.\n"
+        "Vamos a implementar algunas funciones auxiliares para la red neuronal."
       ],
-      "id": "fbd68636"
+      "id": "84020aba"
     },
     {
       "cell_type": "code",
@@ -509,7 +508,7 @@
         "    \n",
         "    return weights_input_hidden, bias_input_hidden, weights_hidden_output, bias_hidden_output"
       ],
-      "id": "e9fa8e13",
+      "id": "93121213",
       "execution_count": null,
       "outputs": []
     },
@@ -519,9 +518,9 @@
       "source": [
         "#### Entrenamiento de la Red Neuronal\n",
         "\n",
-        "Vamos a entrenar la red neuronal utilizando el algoritmo de retropropagación. Durante el entrenamiento, vamos a calcular la función de pérdida, el gradiente de la función de pérdida con respecto a los pesos y sesgos de la red neuronal y vamos a actualizar los pesos y sesgos utilizando el algoritmo de descenso del gradiente.\n"
+        "Vamos a entrenar la red neuronal utilizando el algoritmo de retropropagación. Durante el entrenamiento, vamos a calcular la función de pérdida, el gradiente de la función de pérdida con respecto a los pesos y sesgos de la red neuronal y vamos a actualizar los pesos y sesgos utilizando el algoritmo de descenso del gradiente."
       ],
-      "id": "ea9b0c2d"
+      "id": "3102d843"
     },
     {
       "cell_type": "code",
@@ -582,7 +581,7 @@
         "    elif epoch == epochs - 1:\n",
         "        print(f\"Epoch {epoch}: Loss {loss}\")"
       ],
-      "id": "c5a41b98",
+      "id": "94830cc9",
       "execution_count": null,
       "outputs": []
     },
@@ -594,7 +593,7 @@
         "\n",
         "Una ves que hemos entrenado la red neuronal, podemos hacer predicciones con la red neuronal que es el objetivo de crear un modelo de aprendizaje automático."
       ],
-      "id": "42607d3e"
+      "id": "86139773"
     },
     {
       "cell_type": "code",
@@ -614,7 +613,7 @@
         "\n",
         "df_normalized.head()"
       ],
-      "id": "129bc110",
+      "id": "88fc67c7",
       "execution_count": null,
       "outputs": []
     },
@@ -636,7 +635,7 @@
         "\n",
         "Cada tipo de red neuronal tiene sus propias características y se utiliza en diferentes contextos. Algunas redes son más sencillos de entrenar y otras son más complejas. Por ejemplo, las redes neuronales convolucionales son más sencillas de entrenar que las redes neuronales recurrentes, ya que las redes convolucionales no tienen dependencias temporales."
       ],
-      "id": "72545dcc"
+      "id": "ef1d79cc"
     }
   ],
   "metadata": {
@@ -644,7 +643,7 @@
       "name": "python3",
       "language": "python",
       "display_name": "Python 3 (ipykernel)",
-      "path": "C:\\Users\\crish\\AppData\\Local\\Programs\\Python\\Python313\\share\\jupyter\\kernels\\python3"
+      "path": "/home/quicho/Escritorio/Material_Apoyo_ACA_I_II_III/.venv/share/jupyter/kernels/python3"
     }
   },
   "nbformat": 4,

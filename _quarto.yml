@@ -61,6 +61,10 @@ website:
             text: "Ley de Igualación Generalizada"
           - href: https://colab.research.google.com/drive/1iiA9HNeEcyoB84K9MnOKrLZ67sr7PtJh?usp=sharing
             text: "Introducción a algoritmos Markov Chain Monte Carlo (MCMC)"
+          - href: https://colab.research.google.com/drive/1XTjnQIFOUFUU5rgwLkDC7mB1Y6xbv8B6?usp=sharing
+            text: "Modelo de Rescorla y Wagner Bayesiano"
+          - href: https://colab.research.google.com/drive/1QGn_Qtjgh6SXLVJPFbSVYq2VAKPSo7Kg?usp=sharing
+            text: "Usando Métodos No Parámetricos Bayesianos para Modelar Categorización"
       
       - section: "Curso de Python"
         contents:
